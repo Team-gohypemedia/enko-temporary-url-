@@ -69,7 +69,7 @@ export function HeroSection() {
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#E8A020] text-forge px-10 py-4 font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-[#c98a1a] transition-colors shadow-lg shadow-[#E8A020]/30 group">
                 Whatsapp Us <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
-              <a href="/quote" className="inline-block bg-steel text-warm border-2 border-warm/20 px-10 py-4 font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-warm hover:text-forge transition-colors shadow-lg group">
+              <a href="/contact" className="inline-block bg-steel text-warm border-2 border-warm/20 px-10 py-4 font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-warm hover:text-forge transition-colors shadow-lg group">
                 Request a Quote
               </a>
             </div>
