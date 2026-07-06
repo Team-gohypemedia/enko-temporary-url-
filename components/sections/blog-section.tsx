@@ -19,7 +19,6 @@ function DarkRangeCard({
         style={{ background: 'radial-gradient(ellipse at 50% 40%, #2e2e2e 0%, #191919 55%, #0a0a0a 100%)' }}
         onClick={onToggle}
       >
-        <p className="absolute top-4 left-4 text-[8px] font-bold uppercase tracking-[0.2em] text-charge/70">[ {card.tag} ]</p>
         <img
           src={card.image}
           alt={card.name}

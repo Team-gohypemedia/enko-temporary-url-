@@ -41,10 +41,6 @@ function StaggeredCards({ cards }: { cards: Card[] }) {
                 0{idx + 1}
               </span>
               <div className="min-w-0 flex-1 overflow-hidden">
-                <p className={`text-[7px] font-bold uppercase tracking-[0.2em] mb-1 transition-colors truncate
-                  ${active === idx ? 'text-charge' : 'text-warm/30 group-hover:text-warm/50'}`}>
-                  {card.tag}
-                </p>
                 <h3 className={`text-xs font-black uppercase leading-snug transition-colors line-clamp-2
                   ${active === idx ? 'text-warm' : 'text-warm/50 group-hover:text-warm/75'}`}>
                   {card.heading}
@@ -63,9 +59,6 @@ function StaggeredCards({ cards }: { cards: Card[] }) {
 
       {/* Right: Content panel */}
       <div className="flex-1 min-w-0 bg-steel border border-warm/10 rounded-2xl p-7 lg:p-9 min-h-[290px]">
-        <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-charge mb-2">
-          {cards[active].tag}
-        </p>
         <h2 className="text-xl lg:text-2xl font-black uppercase text-warm mb-6 leading-tight border-b border-warm/10 pb-5">
           {cards[active].heading}
         </h2>

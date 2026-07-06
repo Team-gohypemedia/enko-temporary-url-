@@ -165,9 +165,6 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
                 transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                 className="pr-2"
               >
-                <p className="text-[10px] font-black uppercase tracking-[0.24em] text-charge">
-                  {activeReview.affiliation}
-                </p>
                 <h3 className="mt-3 text-3xl font-black uppercase leading-tight text-warm sm:text-4xl">
                   {activeReview.name}
                 </h3>

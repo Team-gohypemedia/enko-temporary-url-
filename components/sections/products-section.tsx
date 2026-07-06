@@ -8,9 +8,6 @@ function ProductCard({ card, index }: { card: typeof productCards[0], index: num
   return (
     <article className="border border-warm/5 p-6 rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.4)] flex flex-col justify-between self-start transition-all hover:shadow-[0_8px_30px_rgba(232,160,32,0.1)] hover:border-warm/20" style={{ background: 'radial-gradient(ellipse at 50% 30%, #2e2e2e 0%, #191919 55%, #0a0a0a 100%)' }}>
       <div>
-        <p className="mb-4 text-[10px] font-black uppercase tracking-[0.16em] text-charge">
-          {card.tag}
-        </p>
         <div className="h-64 rounded-sm relative overflow-hidden flex items-center justify-center">
           <img src={card.image} alt={card.name} className="max-h-full max-w-full object-contain px-4 pb-10 pt-4 opacity-95" />
         </div>

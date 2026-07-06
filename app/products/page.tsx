@@ -146,7 +146,6 @@ function ProductCard({ product, isOpen, onToggle }: ProductCardProps) {
   return (
     <div className="bg-forge border border-warm/10 rounded-2xl overflow-hidden hover:border-charge/40 transition-all duration-300 group flex flex-col">
       <div className="relative h-56 xl:h-60 flex items-center justify-center p-6 flex-shrink-0" style={{ background: 'radial-gradient(ellipse at 50% 40%, #2e2e2e 0%, #191919 55%, #0a0a0a 100%)' }}>
-        <p className="absolute top-3 left-3 text-[7px] font-bold uppercase tracking-[0.2em] text-charge/70">[ {product.tag} ]</p>
         <Image src={product.image} alt={product.name} fill className="object-contain px-6 pb-12 pt-6 group-hover:scale-105 transition-transform duration-500" />
       </div>
       <div className="p-4 flex flex-col flex-grow">

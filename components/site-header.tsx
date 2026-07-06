@@ -55,10 +55,11 @@ export function SiteHeader() {
           <div className="flex items-center gap-4">
             <a
               href="/contact"
-              className={`hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border ${!hasBg
-                  ? 'border-white/40 text-white hover:bg-white hover:text-forge hover:border-white'
-                  : 'border-warm/30 text-warm hover:bg-charge hover:text-forge hover:border-charge'
-                } ${isContactActive ? (hasBg ? 'bg-charge text-forge border-charge' : 'bg-white text-forge border-white') : ''}`}
+              className={`hidden sm:inline-flex items-center justify-center px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border ${
+                isContactActive
+                  ? (hasBg ? 'bg-charge text-forge border-charge hover:bg-charge/90' : 'bg-white text-forge border-white hover:bg-white/90')
+                  : (!hasBg ? 'border-white/40 text-white hover:bg-white hover:text-forge hover:border-white' : 'border-warm/30 text-warm hover:bg-charge hover:text-forge hover:border-charge')
+              }`}
             >
               Request Quote
             </a>
@@ -98,10 +99,11 @@ export function SiteHeader() {
             <a
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className={`mt-4 sm:hidden flex items-center justify-center text-center px-4 py-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border ${!hasBg
-                  ? 'border-white/40 text-white hover:bg-white hover:text-forge hover:border-white'
-                  : 'border-warm/30 text-warm hover:bg-charge hover:text-forge hover:border-charge'
-                } ${isContactActive ? (hasBg ? 'bg-charge text-forge border-charge' : 'bg-white text-forge border-white') : ''}`}
+              className={`mt-4 sm:hidden flex items-center justify-center text-center px-4 py-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border ${
+                isContactActive
+                  ? (hasBg ? 'bg-charge text-forge border-charge hover:bg-charge/90' : 'bg-white text-forge border-white hover:bg-white/90')
+                  : (!hasBg ? 'border-white/40 text-white hover:bg-white hover:text-forge hover:border-white' : 'border-warm/30 text-warm hover:bg-charge hover:text-forge hover:border-charge')
+              }`}
             >
               Request Quote
             </a>
