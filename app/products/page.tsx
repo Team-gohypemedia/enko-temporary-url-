@@ -513,7 +513,7 @@ export default function ProductsPage() {
             {/* Header */}
             <div className="mb-10 xl:mb-12">
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-charge mb-3">
-                [ HARDWARE SYSTEMS COMPONENT ARCHITECTURE ]
+                {/* [ HARDWARE SYSTEMS COMPONENT ARCHITECTURE ] */}
               </p>
               <h2 className="text-3xl lg:text-5xl font-black uppercase text-warm mb-4 leading-tight">
                 Full-Spectrum CCS2<br />Charging Assets.
@@ -643,7 +643,7 @@ export default function ProductsPage() {
                 },
                 {
                   step: "03",
-                  title: "Deploy & Integrate",  
+                  title: "Deploy & Integrate",
                   desc: "Our expert teams handle the physical installation, grid integration, and site commissioning.",
                   icon: "/images/service_safe.png"
                 },

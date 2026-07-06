@@ -69,7 +69,7 @@ export function BlogSection() {
         <Reveal>
           <div className="mb-12 flex flex-row items-center justify-between text-left border-b-2 border-warm/10 pb-4">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-2">[ ARCHITECTURE OVERVIEW ]</p>
+              {/* <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-2">[ ARCHITECTURE OVERVIEW ]</p> */}
               <h2 className="text-3xl md:text-5xl font-black uppercase text-warm leading-tight">
                 THE ENKO RANGE
               </h2>
