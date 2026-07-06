@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { rangeCards } from '@/lib/site-data';
 
 function RangeCard({ card, index }: { card: typeof rangeCards[0], index: number }) {
-  const [showSpecs, setShowSpecs] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const onToggle = () => setIsOpen(!isOpen);
 
   return (
     <article className="group border border-warm/5 p-6 rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.4)] flex flex-col justify-between self-start transition-all hover:shadow-[0_8px_30px_rgba(232,160,32,0.1)] hover:border-warm/20" style={{ background: 'radial-gradient(ellipse at 50% 30%, #2e2e2e 0%, #191919 55%, #0a0a0a 100%)' }}>
@@ -13,7 +14,7 @@ function RangeCard({ card, index }: { card: typeof rangeCards[0], index: number 
         </div>
         <h3 className="mt-6 text-2xl font-black uppercase text-warm">{card.name}</h3>
 
-        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${showSpecs ? 'max-h-[800px] opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
           <p className="text-sm leading-6 text-warm/65">{card.copy}</p>
 
           <div className="space-y-5 pt-6 mt-6 border-t border-warm/10">
@@ -31,16 +32,17 @@ function RangeCard({ card, index }: { card: typeof rangeCards[0], index: number 
       </div>
 
       <button
-        onClick={() => setShowSpecs(!showSpecs)}
+        onClick={onToggle}
         className="mt-8 w-full py-3.5 bg-forge border border-warm/10 shadow-sm text-xs font-black tracking-[0.16em] uppercase transition-all hover:bg-charge hover:text-forge hover:border-charge hover:shadow-md text-warm"
       >
-        {showSpecs ? '[ HIDE TECH SPECS ]' : '[ VIEW TECH SPECS ]'}
+        {isOpen ? '[ HIDE TECH SPECS ]' : '[ VIEW TECH SPECS ]'}
       </button>
     </article>
   );
 }
 
 export function RangeSection() {
+
   return (
     <section id="range" className="grid-paper border-b border-warm/10 bg-steel pt-24 pb-16">
 
@@ -77,7 +79,11 @@ export function RangeSection() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3 items-start relative z-40">
           {rangeCards.map((card, index) => (
-            <RangeCard key={card.name} card={card} index={index} />
+            <RangeCard 
+              key={card.name} 
+              card={card} 
+              index={index} 
+            />
           ))}
         </div>
 

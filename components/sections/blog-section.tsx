@@ -5,13 +5,11 @@ import { Reveal } from '@/components/reveal';
 
 function DarkRangeCard({
   card,
-  isOpen,
-  onToggle
 }: {
-  card: typeof rangeCards[0],
-  isOpen: boolean,
-  onToggle: () => void
+  card: typeof rangeCards[0]
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const onToggle = () => setIsOpen(!isOpen);
   return (
     <article className="group flex flex-col items-start w-full">
       <div
@@ -62,7 +60,6 @@ function DarkRangeCard({
 }
 
 export function BlogSection() {
-  const [openCardIdx, setOpenCardIdx] = useState<number | null>(null);
 
   return (
     <section className="min-h-[100dvh] flex flex-col justify-center bg-forge py-24 border-b border-warm/10 relative overflow-hidden">
@@ -91,8 +88,6 @@ export function BlogSection() {
             <Reveal key={card.name} delay={idx * 0.12} direction="up">
               <DarkRangeCard
                 card={card}
-                isOpen={openCardIdx === idx}
-                onToggle={() => setOpenCardIdx(openCardIdx === idx ? null : idx)}
               />
             </Reveal>
           ))}
