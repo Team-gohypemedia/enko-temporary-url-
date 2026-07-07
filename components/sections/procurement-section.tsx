@@ -7,7 +7,7 @@ import { Reveal } from '@/components/reveal';
 import { submitContactForm } from '@/lib/wordpress';
 
 const businessRoles = ['Charge Point Operator (CPO)', 'Vehicle OEM', 'Fleet Logistics Provider', 'Institutional Real Estate Buyer'];
-const regions = ['Tamil Nadu', 'Kerala', 'Andhra Pradesh', 'Karnataka (Operational HQ)', 'Telangana (Expansion)', 'Other Expansion State'];
+const regions = ['Kerala', 'Andhra Pradesh', 'Telangana (Expansion)', 'Other Expansion State'];
 const series = ['FLOW AC Series', 'STORM DC Series', 'BLAZE ULTRA Series'];
 
 export function ProcurementSection() {
@@ -55,7 +55,7 @@ export function ProcurementSection() {
                 </li>
                 <li className="flex gap-3">
                   <MapPin className="h-4 w-4 text-charge" />
-                  Bengaluru, Karnataka
+                  Bengaluru
                 </li>
               </ul>
             </div>
@@ -63,7 +63,7 @@ export function ProcurementSection() {
             <div className="border border-warm/10 bg-forge p-4">
               <p className="text-[10px] font-black uppercase tracking-[0.16em] text-warm/45">Operational regions</p>
               <p className="mt-3 text-sm leading-5 text-warm/70">
-                Tamil Nadu, Kerala, Andhra Pradesh, and Karnataka are active service regions. Telangana and other states are handled as expansion enquiries.
+                Kerala and Andhra Pradesh are active service regions. Telangana and other states are handled as expansion enquiries.
               </p>
             </div>
           </aside>

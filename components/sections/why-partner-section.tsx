@@ -19,7 +19,7 @@ export function WhyPartnerSection() {
     {
       type: 'South India CPO',
       size: 'DC fast chargers across highway networks',
-      location: 'Tamil Nadu and Kerala corridors',
+      location: 'Kerala corridors',
       outcome: 'Improved uptime planning while protecting project margins',
       icon: RadioTower,
     },
@@ -37,7 +37,7 @@ export function WhyPartnerSection() {
           </div>
           <div className="flex items-center gap-2 text-sm text-warm/60">
             <MapPinned className="h-4 w-4 text-charge" />
-            Tamil Nadu, Kerala, Andhra Pradesh, Karnataka
+            Kerala, Andhra Pradesh
           </div>
         </div>
 

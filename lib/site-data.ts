@@ -200,11 +200,11 @@ export const faqs = [
   },
   {
     q: 'What is your typical manufacturing lead time?',
-    a: 'For standard orders (up to 10 units), our typical lead time is 3 to 4 weeks from the date of order confirmation. For bulk B2B procurement and custom-configured batches, lead times are determined during the engineering spec review phase.',
+    a: 'For standard orders (up to 10 units), our typical lead time is 4 to 6 weeks from the date of order confirmation. For bulk B2B procurement and custom-configured batches, lead times are determined during the engineering spec review phase.',
   },
   {
     q: 'Do you provide installation and commissioning support?',
-    a: 'Yes. We offer complete field service, installation supervision, and commissioning support across our operational regions (Tamil Nadu, Kerala, Andhra Pradesh, and Karnataka) to ensure your deployment is grid-ready and OCPP-integrated from day one.',
+    a: 'Yes. We offer complete field service, installation supervision, and commissioning support across our operational regions (Kerala and Andhra Pradesh) to ensure your deployment is grid-ready and OCPP-integrated from day one.',
   },
   {
     q: 'What are your standard payment terms?',
@@ -225,7 +225,7 @@ export const faqs = [
 ];
 
 export const aboutData = {
-  companyStoryShort: "ENKO was founded to solve a specific gap in the Indian EV charging market - quality CCS2 chargers with real local service, at prices Indian buyers can work with. We assemble a full-spectrum range and back every unit with South India-first AMC support, serving OEMs, CPOs, and fleet operators across Tamil Nadu, Kerala, and Andhra Pradesh.",
+  companyStoryShort: "ENKO was founded to solve a specific gap in the Indian EV charging market - quality CCS2 chargers with real local service, at prices Indian buyers can work with. We assemble a full-spectrum range and back every unit with South India-first AMC support, serving OEMs, CPOs, and fleet operators across Kerala and Andhra Pradesh.",
   companyStory: "ENKO was established to bridge a critical gap in India's EV charging market. We realized operators lacked robust CCS2 chargers backed by authentic, local service. We stepped in to disrupt this by assembling a full-spectrum range of premium electric vehicle chargers, paired with an industry-leading, South India-first AMC support network for ultimate reliability.",
   directors: {
     names: "Samir Kamra & Ellappane",

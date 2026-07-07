@@ -348,7 +348,7 @@ export default function AboutPage() {
               blocks: [
                 {
                   title: 'Proven in the Field',
-                  body: 'Reliability isn\'t calculated in a lab. Over the past two years, ENKO has quietly deployed hardware across demanding commercial sectors in Tamil Nadu, Kerala, and Andhra Pradesh. With 9x120kW DC Fast Chargers running at high-throughput live sites, our hardware is continuously validated.',
+                  body: 'Reliability isn\'t calculated in a lab. Over the past two years, ENKO has quietly deployed hardware across demanding commercial sectors in Kerala and Andhra Pradesh. With 9x120kW DC Fast Chargers running at high-throughput live sites, our hardware is continuously validated.',
                   accent: true,
                 },
                 {

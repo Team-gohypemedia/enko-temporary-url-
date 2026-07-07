@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-steel text-warm">
       <div className="container-shell grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-6 border-t border-warm/10">
-        <div className="xl:col-span-2">
+        <div className="xl:col-span-3">
           <img src="/Enko logo.png" alt="ENKO Logo" className="h-48 w-auto object-contain -my-16 -ml-8 scale-125 origin-left" />
           <p className="mt-4 max-w-xs text-sm leading-7 text-warm/55">
             ENKO Energy Pvt Ltd builds AC and DC EV charging hardware for CPOs, OEMs, fleets, and commercial sites.
@@ -20,15 +20,7 @@ export function SiteFooter() {
             ))}
           </ul>
         </div>
-        <div>
-          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-warm/70">Service Regions</h3>
-          <ul className="mt-4 space-y-2 text-sm text-warm/55">
-            <li>Tamil Nadu</li>
-            <li>Kerala</li>
-            <li>Andhra Pradesh</li>
-            <li>Karnataka</li>
-          </ul>
-        </div>
+
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-warm/70">Resources</h3>
           <ul className="mt-4 space-y-2 text-sm text-warm/55">
@@ -48,10 +40,7 @@ export function SiteFooter() {
               <span className="block text-[10px] uppercase text-warm/40 mb-0.5">Email</span>
               contact@enkoenergy.in
             </li>
-            <li>
-              <span className="block text-[10px] uppercase text-warm/40 mb-0.5">HQ</span>
-              Bengaluru, Karnataka
-            </li>
+
             <li className="pt-2">
               <span className="mr-3 hover:text-charge transition-colors">LinkedIn</span>
               <span className="hover:text-charge transition-colors">Instagram</span>
