@@ -27,7 +27,7 @@ export function WhyEvSection() {
 
   return (
     <section id="why-ev" className="flex flex-col justify-center w-full bg-[#E8A020] py-24 lg:py-32">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container-shell">
 
         <Reveal>
           <div className="mb-16">

@@ -18,7 +18,7 @@ export function OemSection() {
       <div className="absolute inset-0 bg-[#111]/80 mix-blend-multiply" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent opacity-80" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Centered Content */}
         <Reveal direction="up">
           <div className="flex flex-col items-center justify-center text-center space-y-6">

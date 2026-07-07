@@ -35,7 +35,7 @@ const features = [
 
 export function PartnerFeaturesSection() {
   return (
-    <section id="partner-options" className="scroll-mt-24 border-b border-warm/10 bg-steel lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden">
+    <section id="partner-options" className="scroll-mt-24 border-b border-warm/10 bg-steel lg:flex lg:min-h-[100dvh] lg:items-center lg:py-24">
       <div className="container-shell py-16 lg:py-10">
         <div className="max-w-3xl">
           <p className="label-kicker text-charge">Partner programs</p>

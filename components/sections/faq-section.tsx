@@ -19,8 +19,8 @@ export function FaqSection() {
   ];
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center bg-steel py-16 border-b border-warm/10 lg:h-[100dvh] lg:overflow-hidden lg:py-8">
-      <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="min-h-[100dvh] flex flex-col justify-center bg-steel py-16 border-b border-warm/10 lg:min-h-[100dvh] lg:py-24">
+      <div className="container-shell">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-12 lg:mb-10">
 

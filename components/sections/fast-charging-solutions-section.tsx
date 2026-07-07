@@ -30,7 +30,7 @@ export function FastChargingSolutionsSection() {
   ];
 
   return (
-    <section id="product-range" className="border-b border-warm/10 bg-forge text-warm lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden">
+    <section id="product-range" className="border-b border-warm/10 bg-forge text-warm lg:flex lg:min-h-[100dvh] lg:items-center lg:py-24">
       <div className="container-shell py-16 lg:py-7">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">

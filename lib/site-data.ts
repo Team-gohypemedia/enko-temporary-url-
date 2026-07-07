@@ -193,10 +193,7 @@ export const faqs = [
     q: 'What communications protocol do ENKO chargers run on?',
     a: 'Every charger across our entire line runs standard OCPP 2.0.1 software. This ensures smooth, plug-and-play integration with any standard OCPP-compliant Central Management System (CMS) or network software platform.',
   },
-  {
-    q: 'Do you supply hardware outside of South India?',
-    a: 'Right now, our core operational priority is South India-first, covering Tamil Nadu, Kerala, Andhra Pradesh, and Karnataka (Operational HQ). However, our pan-India expansion is actively moving forward. If your project is located outside these states, please get in touch with our team to discuss your timeline and deployment options.',
-  },
+
   {
     q: 'What is the standard warranty on ENKO hardware?',
     a: 'We provide a standard 1-year comprehensive warranty on all AC and DC chargers, covering manufacturing defects and core components. Extended warranty options and Annual Maintenance Contracts (AMC) are also available at 4% of the unit price per year.',

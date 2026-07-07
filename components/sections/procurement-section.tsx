@@ -15,7 +15,7 @@ export function ProcurementSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
-    <section id="procurement" className="grid-paper border-b border-warm/10 bg-forge lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden">
+    <section id="procurement" className="grid-paper border-b border-warm/10 bg-forge lg:flex lg:min-h-[100dvh] lg:items-center lg:py-24">
       <div className="container-shell py-16 lg:py-8">
         <Reveal>
         <div className="grid gap-8 lg:grid-cols-[0.36fr_0.64fr]">

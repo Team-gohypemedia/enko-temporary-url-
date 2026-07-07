@@ -3,7 +3,7 @@ import { Reveal } from '@/components/reveal';
 export function CtaSection() {
   return (
     <section className="w-full bg-charge py-16 lg:py-20 border-b border-[#111]/10">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container-shell flex flex-col lg:flex-row items-center justify-between gap-12">
         <Reveal direction="left">
           <div className="max-w-2xl text-center lg:text-left">
             <h2 className="text-4xl lg:text-5xl font-black text-[#111] uppercase tracking-tight mb-4 leading-[1.1]">

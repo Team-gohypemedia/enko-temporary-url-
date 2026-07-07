@@ -26,7 +26,7 @@ export function WhyPartnerSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-b border-warm/10 bg-[#0a0a0a] py-16 lg:flex lg:h-[100dvh] lg:items-center lg:py-8">
+    <section className="relative overflow-hidden border-b border-warm/10 bg-[#0a0a0a] py-16 lg:flex lg:min-h-[100dvh] lg:items-center lg:py-24">
       <div className="container-shell relative z-10">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">

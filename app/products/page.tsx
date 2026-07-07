@@ -675,7 +675,7 @@ export default function ProductsPage() {
 
       {/* Compatibility Chart Section */}
       <section className="min-h-[50dvh] bg-steel border-b border-warm/10 py-16 lg:flex lg:h-[50dvh] lg:items-center lg:overflow-hidden lg:py-10">
-        <div className="container-shell max-w-4xl mx-auto">
+        <div className="container-shell max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center mb-8 xl:mb-10">
               <h2 className="text-2xl lg:text-4xl font-black uppercase mb-2 text-warm">Connector Compatibility</h2>
