@@ -138,7 +138,7 @@ export function RangeSection() {
                   </div>
 
                   {/* Fully visible charger image in default preview state */}
-                  <div className="my-auto flex items-end justify-center h-[100px] lg:h-[290px] w-full relative pb-4">
+                  <div className="my-auto mt-6 lg:mt-0 flex items-end justify-center h-[100px] lg:h-[290px] w-full relative pb-4">
                     <img
                       src={card.image}
                       alt={card.name}
