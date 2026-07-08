@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { rangeCards } from '@/lib/site-data';
 
 const bgImages = [
@@ -9,19 +9,29 @@ const bgImages = [
 ];
 
 const PREVIEW_IMG_CLASSES = [
-  'max-h-[300px] scale-[1.35] lg:scale-[1.45]', // Flow AC (AC Charger) - Large scale
-  'max-h-[300px] scale-[1.2] lg:scale-[1.25]',  // Storm DC (Fast DC Cabinet) - Large scale
-  'max-h-[300px] scale-[1.2] lg:scale-[1.25]',  // Blaze Ultra (Heavy DC Dispenser) - Large scale
+  'max-h-[100px] lg:max-h-[300px] scale-[1.35] lg:scale-[1.45]', // Flow AC (AC Charger) - Large scale
+  'max-h-[100px] lg:max-h-[300px] scale-[1.2] lg:scale-[1.25]',  // Storm DC (Fast DC Cabinet) - Large scale
+  'max-h-[100px] lg:max-h-[300px] scale-[1.2] lg:scale-[1.25]',  // Blaze Ultra (Heavy DC Dispenser) - Large scale
 ];
 
 const ACTIVE_IMG_CLASSES = [
-  'max-h-[380px] lg:max-h-[420px] scale-[1.2] origin-center',  // Flow AC (AC Charger) - Large scale
-  'max-h-[420px] lg:max-h-[460px] scale-[1.1] origin-center',  // Storm DC (Fast DC Cabinet) - Large scale
-  'max-h-[440px] lg:max-h-[480px] scale-[1.1] origin-center',  // Blaze Ultra (Heavy DC Dispenser) - Large scale
+  'max-h-[220px] lg:max-h-[420px] scale-[1.2] origin-center',  // Flow AC (AC Charger) - Large scale
+  'max-h-[220px] lg:max-h-[460px] scale-[1.1] origin-center',  // Storm DC (Fast DC Cabinet) - Large scale
+  'max-h-[220px] lg:max-h-[480px] scale-[1.1] origin-center',  // Blaze Ultra (Heavy DC Dispenser) - Large scale
 ];
 
 export function RangeSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleClose = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -51,15 +61,16 @@ export function RangeSection() {
 
         {/* Bounded Interactive Slider Container */}
         <div
-          className="relative w-full overflow-hidden border border-warm/10 rounded-2xl bg-steel/20 flex"
-          style={{ height: '550px' }}
+          className="relative w-full overflow-hidden border border-warm/10 rounded-2xl bg-steel/20 flex flex-col lg:flex-row h-[780px] lg:h-[550px]"
         >
           {/* Ambient background glow inside the slider box */}
           <div
             className="pointer-events-none absolute inset-0 z-0 transition-all duration-1000 ease-out"
             style={{
               background: activeIndex !== null
-                ? `radial-gradient(circle 600px at ${activeIndex === 0 ? '20%' : activeIndex === 1 ? '50%' : '80%'} 50%, rgba(232, 160, 32, 0.08) 0%, transparent 80%)`
+                ? isMobile
+                  ? `radial-gradient(circle 400px at 50% ${activeIndex === 0 ? '20%' : activeIndex === 1 ? '50%' : '80%'}, rgba(232, 160, 32, 0.08) 0%, transparent 80%)`
+                  : `radial-gradient(circle 600px at ${activeIndex === 0 ? '20%' : activeIndex === 1 ? '50%' : '80%'} 50%, rgba(232, 160, 32, 0.08) 0%, transparent 80%)`
                 : 'radial-gradient(circle 500px at 50% 50%, rgba(232, 160, 32, 0.03) 0%, transparent 80%)',
             }}
           />
@@ -73,14 +84,13 @@ export function RangeSection() {
               <div
                 key={card.name}
                 onClick={() => setActiveIndex(i)}
-                className="relative flex h-full overflow-hidden cursor-pointer transition-all duration-800 ease-[cubic-bezier(0.25,1,0.3,1)] will-change-[flex]"
+                className="relative flex w-full h-auto lg:h-full overflow-hidden cursor-pointer transition-all duration-800 ease-[cubic-bezier(0.25,1,0.3,1)] will-change-[flex] border-b lg:border-b-0 lg:border-r border-warm/10 last:border-b-0 lg:last:border-r-0"
                 style={{
                   flex: isActive
                     ? '10 0 0%'
                     : isAnyActive
                     ? '1 0 0%'
                     : '4 0 0%',
-                  borderRight: i < rangeCards.length - 1 ? '1px solid rgba(238, 235, 228, 0.08)' : 'none',
                 }}
               >
                 {/* Background Image */}
@@ -98,16 +108,6 @@ export function RangeSection() {
                       transform: isActive ? 'scale(1.08)' : 'scale(1)',
                     }}
                   />
-                  {/* Gradient Overlay */}
-                  <div
-                    className="absolute inset-0 transition-opacity duration-800"
-                    style={{
-                      background: isActive
-                        ? 'linear-gradient(180deg, rgba(8,8,8,0.7) 0%, rgba(8,8,8,0.2) 30%, rgba(8,8,8,0.2) 70%, rgba(8,8,8,0.9) 100%)'
-                        : 'linear-gradient(180deg, rgba(8,8,8,0.6) 0%, rgba(8,8,8,0.15) 30%, rgba(8,8,8,0.15) 70%, rgba(8,8,8,0.8) 100%)',
-                    }}
-                  />
-                  
                   {/* Top amber accent line */}
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px] transition-all duration-500 origin-left"
@@ -121,7 +121,7 @@ export function RangeSection() {
 
                 {/* DEFAULT CLOSED STATE */}
                 <div
-                  className="absolute inset-0 z-20 flex flex-col justify-between p-6 lg:p-8 items-center text-center transition-all duration-700 ease-[cubic-bezier(0.25,1,0.3,1)]"
+                  className="absolute inset-0 z-20 flex flex-col justify-between p-5 lg:p-8 items-center text-center transition-all duration-700 ease-[cubic-bezier(0.25,1,0.3,1)]"
                   style={{
                     opacity: isAnyActive ? 0 : 1,
                     transform: isAnyActive ? 'translateY(-20px)' : 'translateY(0)',
@@ -138,18 +138,7 @@ export function RangeSection() {
                   </div>
 
                   {/* Fully visible charger image in default preview state */}
-                  <div className="my-auto flex items-center justify-center h-[290px] w-full relative pb-4">
-                    {/* Tailored background glow for each product to enhance visibility */}
-                    <div
-                      className="absolute w-64 h-64 rounded-full blur-[80px] opacity-60 pointer-events-none mix-blend-screen"
-                      style={{
-                        background: i === 0 
-                          ? 'radial-gradient(circle, rgba(232, 160, 32, 0.6) 0%, transparent 70%)' // Amber for Flow AC
-                          : i === 1
-                          ? 'radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, transparent 70%)' // Sky blue for Storm DC
-                          : 'radial-gradient(circle, rgba(239, 68, 68, 0.6) 0%, transparent 70%)', // Crimson for Blaze Ultra
-                      }}
-                    />
+                  <div className="my-auto flex items-end justify-center h-[120px] lg:h-[290px] w-full relative pb-4">
                     <img
                       src={card.image}
                       alt={card.name}
@@ -171,17 +160,24 @@ export function RangeSection() {
 
                 {/* COLLAPSED VIEW (when another panel is expanded) */}
                 <div
-                  className="absolute inset-0 z-20 flex flex-col items-center justify-between py-12 pointer-events-none transition-all duration-500"
+                  className="absolute inset-0 z-20 flex flex-row lg:flex-col items-center justify-between px-6 py-4 lg:py-12 pointer-events-none transition-all duration-500"
                   style={{
                     opacity: (isAnyActive && !isActive) ? 1 : 0,
                     transform: (isAnyActive && !isActive) ? 'translateY(0)' : 'translateY(20px)',
                   }}
                 >
-                  <span className="text-[9px] font-black tracking-[0.2em] text-charge uppercase font-mono">
-                    0{i + 1}
-                  </span>
+                  <div className="flex items-center gap-4 lg:flex-col">
+                    <span className="text-[9px] font-black tracking-[0.2em] text-charge uppercase font-mono">
+                      0{i + 1}
+                    </span>
+                    <span
+                      className="font-black uppercase tracking-[0.25em] text-warm/60 text-[10px] whitespace-nowrap lg:hidden"
+                    >
+                      {card.name}
+                    </span>
+                  </div>
 
-                  <div className="flex flex-col items-center gap-4 my-auto">
+                  <div className="hidden lg:flex flex-col items-center gap-4 my-auto">
                     <span
                       className="font-black uppercase tracking-[0.25em] text-warm/60 text-[10px] whitespace-nowrap"
                       style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
@@ -191,7 +187,7 @@ export function RangeSection() {
                     <div className="w-1 h-1 rounded-full bg-charge/40" />
                   </div>
 
-                  <div className="w-6 h-6 rounded-full border border-warm/10 flex items-center justify-center bg-forge/30">
+                  <div className="w-6 h-6 rounded-full border border-warm/10 flex items-center justify-center bg-forge/30 shrink-0">
                     <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
                       <path d="M5 1v8M1 5h8" stroke="#EEEBE4" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
@@ -224,7 +220,7 @@ export function RangeSection() {
                     </svg>
                   </button>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center w-full h-full px-8 lg:px-12 py-8 overflow-y-auto lg:overflow-visible">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center w-full h-full px-6 lg:px-12 py-6 lg:py-8 overflow-y-auto lg:overflow-visible">
                     
                     {/* Left Column: Specs Branding / Copy */}
                     <div
@@ -269,30 +265,13 @@ export function RangeSection() {
                         opacity: isActive ? 1 : 0,
                       }}
                     >
-                      {/* Aura */}
-                      <div
-                        className="absolute w-72 h-72 rounded-full blur-[90px] opacity-30 pointer-events-none mix-blend-screen transition-all duration-1000"
-                        style={{
-                          background: i === 0 
-                            ? 'radial-gradient(circle, #E8A020 0%, transparent 70%)' // Amber for Flow AC
-                            : i === 1
-                            ? 'radial-gradient(circle, #0EA5E9 0%, transparent 70%)' // Sky blue for Storm DC
-                            : 'radial-gradient(circle, #EF4444 0%, transparent 70%)', // Crimson for Blaze Ultra
-                          transform: isActive ? 'scale(1.1)' : 'scale(0.8)',
-                        }}
-                      />
-
                       {/* Extremely crisp, large, and fully viewable charger image */}
                       <img
                         src={card.image}
                         alt={card.name}
-                        className={`w-auto object-contain z-10 drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] ${ACTIVE_IMG_CLASSES[i]}`}
+                        className={`w-auto object-contain z-10 ${ACTIVE_IMG_CLASSES[i]}`}
                         style={{
-                          filter: i === 0
-                            ? 'drop-shadow(0 20px 30px rgba(232, 160, 32, 0.2))'
-                            : i === 1
-                            ? 'drop-shadow(0 20px 30px rgba(14, 165, 233, 0.2))'
-                            : 'drop-shadow(0 20px 30px rgba(239, 68, 68, 0.2))',
+                          filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8))',
                           animation: isActive ? 'float-animation 6s ease-in-out infinite alternate' : 'none',
                         }}
                       />
