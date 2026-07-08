@@ -50,8 +50,8 @@ export function HeroSection() {
             <Reveal direction="right" delay={0.2}>
               <h1 className="text-5xl md:text-6xl lg:text-[72px] font-black uppercase text-warm leading-[1.05] tracking-tight drop-shadow-sm flex flex-col items-center">
                 <span>POWERING</span>
-                <span className="flex items-center justify-center flex-wrap h-[1.5em] overflow-hidden text-6xl md:text-7xl lg:text-[110px] -mt-2 lg:-mt-6 mb-[-10px] lg:mb-[-20px]">
-                  <span className={`transition-all duration-500 ease-in-out inline-block ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <span className="flex items-center justify-center h-[1.2em] overflow-hidden text-[38px] xs:text-[44px] sm:text-6xl md:text-7xl lg:text-[110px] -mt-1 md:-mt-2 lg:-mt-6 mb-[-5px] md:mb-[-10px] lg:mb-[-20px]">
+                  <span className={`transition-all duration-500 ease-in-out inline-block whitespace-nowrap ${fade ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     {rotatingWords[wordIndex]}
                   </span>
                 </span>
@@ -65,11 +65,11 @@ export function HeroSection() {
           </div>
 
           <Reveal direction="right" delay={0.6}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#E8A020] text-forge px-10 py-4 font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-[#c98a1a] transition-colors shadow-lg shadow-[#E8A020]/30 group">
-                Whatsapp Us <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <div className="flex flex-row justify-center gap-4 w-full max-w-sm sm:max-w-none mx-auto">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-initial text-center bg-[#E8A020] text-forge px-4 sm:px-10 py-4 font-bold uppercase tracking-widest text-[10px] sm:text-xs rounded-sm hover:bg-[#c98a1a] transition-colors shadow-lg shadow-[#E8A020]/30 group whitespace-nowrap">
+                Whatsapp Us <span className="inline-block ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
-              <a href="/contact" className="inline-block bg-steel text-warm border-2 border-warm/20 px-10 py-4 font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-warm hover:text-forge transition-colors shadow-lg group">
+              <a href="/contact" className="flex-1 sm:flex-initial text-center bg-steel text-warm border-2 border-warm/20 px-4 sm:px-10 py-4 font-bold uppercase tracking-widest text-[10px] sm:text-xs rounded-sm hover:bg-warm hover:text-forge transition-colors shadow-lg group whitespace-nowrap">
                 Request a Quote
               </a>
             </div>

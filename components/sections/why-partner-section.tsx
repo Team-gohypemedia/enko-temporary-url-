@@ -1,12 +1,67 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import { MapPinned, RadioTower, TrendingUp } from 'lucide-react';
 
+const INDIAN_STATES = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal"
+];
+
+const UNION_TERRITORIES = [
+  "Andaman & Nicobar",
+  "Chandigarh",
+  "Dadra & Nagar Haveli & Daman & Diu",
+  "Delhi",
+  "Jammu & Kashmir",
+  "Ladakh",
+  "Lakshadweep",
+  "Puducherry"
+];
+
 export function WhyPartnerSection() {
-  const metrics = [
-    { label: 'Deployment count', value: '67+' },
-    { label: 'City coverage', value: '28 states' },
-    { label: 'Union territory coverage', value: '8 states' },
-    // { label: 'Target uptime', value: '99%+' },
-  ];
+
+  const [openDropdown, setOpenDropdown] = useState<'states' | 'uts' | null>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = () => {
+      setOpenDropdown(null);
+    };
+    window.addEventListener('click', handleOutsideClick);
+    return () => {
+      window.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
+  const toggleDropdown = (type: 'states' | 'uts') => {
+    setOpenDropdown(prev => prev === type ? null : type);
+  };
 
   const cases = [
     {
@@ -42,13 +97,99 @@ export function WhyPartnerSection() {
         </div>
 
         <div className="mt-8 grid border border-warm/10 bg-steel/40 md:grid-cols-3">
-          {metrics.map((metric) => (
-            <div key={metric.label} className="border-b border-warm/10 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0">
-              <p className="text-3xl font-black text-charge lg:text-4xl">{metric.value}</p>
-              <p className="mt-2 text-[10px] font-black uppercase tracking-[0.16em] text-warm/45">{metric.label}</p>
+          {/* Deployment Count */}
+          <div className="border-b border-warm/10 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0">
+            <p className="text-3xl font-black text-charge lg:text-4xl">67+</p>
+            <p className="mt-2 text-[10px] font-black uppercase tracking-[0.16em] text-warm/45">Deployment count</p>
+          </div>
+
+          {/* City Coverage (28 States) Dropdown */}
+          <div 
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleDropdown('states');
+            }}
+            className="relative border-b border-warm/10 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 cursor-pointer group select-none"
+          >
+            {/* Top-Right Corner Dropdown Icon */}
+            <div className="absolute top-4 right-4 text-charge/50 group-hover:text-charge transition-colors duration-300">
+              <svg 
+                className={`w-4 h-4 transition-transform duration-300 ${openDropdown === 'states' ? 'rotate-180 text-charge' : ''}`} 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor" 
+                strokeWidth="3"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
             </div>
-          ))}
+
+            <p className="text-3xl font-black text-charge lg:text-4xl transition-colors group-hover:text-warm">28 states</p>
+            <p className="mt-2 text-[10px] font-black uppercase tracking-[0.16em] text-warm/45">City coverage</p>
+
+            {/* Dropdown content */}
+            {openDropdown === 'states' && (
+              <div className="absolute left-0 right-0 top-full mt-1 z-50 p-4 bg-forge border border-warm/15 rounded-md shadow-2xl max-h-56 overflow-y-auto scrollbar-none">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                  {INDIAN_STATES.map(state => (
+                    <div key={state} className="text-[10px] font-bold uppercase tracking-wider text-warm/80 border-b border-warm/5 pb-1">
+                      {state}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Union Territory Coverage (8 UTs) Dropdown */}
+          <div 
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleDropdown('uts');
+            }}
+            className="relative border-b border-warm/10 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 cursor-pointer group select-none"
+          >
+            {/* Top-Right Corner Dropdown Icon */}
+            <div className="absolute top-4 right-4 text-charge/50 group-hover:text-charge transition-colors duration-300">
+              <svg 
+                className={`w-4 h-4 transition-transform duration-300 ${openDropdown === 'uts' ? 'rotate-180 text-charge' : ''}`} 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor" 
+                strokeWidth="3"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+
+            <p className="text-3xl font-black text-charge lg:text-4xl transition-colors group-hover:text-warm">8 UTs</p>
+            <p className="mt-2 text-[10px] font-black uppercase tracking-[0.16em] text-warm/45">Union territory coverage</p>
+
+            {/* Dropdown content */}
+            {openDropdown === 'uts' && (
+              <div className="absolute left-0 right-0 top-full mt-1 z-50 p-4 bg-forge border border-warm/15 rounded-md shadow-2xl max-h-56 overflow-y-auto scrollbar-none">
+                <div className="flex flex-col gap-1.5">
+                  {UNION_TERRITORIES.map(ut => (
+                    <div key={ut} className="text-[10px] font-bold uppercase tracking-wider text-warm/80 border-b border-warm/5 pb-1">
+                      {ut}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
+
+        {/* Scrollbar-none utility styles */}
+        <style>{`
+          .scrollbar-none::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
 
         <div className="mt-6 flex flex-wrap gap-3">
           {['Logistics', 'Highway CPO', 'Fleet Depots', 'Commercial Real Estate', 'OEM Programs'].map((tag) => (

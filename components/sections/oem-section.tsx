@@ -6,7 +6,7 @@ export function OemSection() {
   return (
     <section 
       id="about" 
-      className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden py-32 border-b border-warm/10 bg-steel"
+      className="relative overflow-hidden py-20 lg:py-24 border-b border-warm/10 bg-steel"
       style={{
         backgroundImage: "url('https://i.postimg.cc/tRFCJVLM/handshake-enko.jpg')",
         backgroundSize: "cover",

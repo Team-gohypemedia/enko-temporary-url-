@@ -3,14 +3,14 @@ import { navItems } from '@/lib/site-data';
 export function SiteFooter() {
   return (
     <footer className="bg-steel text-warm">
-      <div className="container-shell grid gap-10 py-14 md:grid-cols-2 xl:grid-cols-6 border-t border-warm/10">
-        <div className="xl:col-span-3">
+      <div className="container-shell grid grid-cols-2 gap-x-8 gap-y-10 py-14 md:grid-cols-2 xl:grid-cols-6 border-t border-warm/10">
+        <div className="col-span-2 md:col-span-2 xl:col-span-3">
           <img src="/Enko logo.png" alt="ENKO Logo" className="h-48 w-auto object-contain -my-16 -ml-8 scale-125 origin-left" />
           <p className="mt-4 max-w-xs text-sm leading-7 text-warm/55">
             ENKO Energy Pvt Ltd builds AC and DC EV charging hardware for CPOs, OEMs, fleets, and commercial sites.
           </p>
         </div>
-        <div>
+        <div className="col-span-1">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-warm/70">Navigation</h3>
           <ul className="mt-4 space-y-2 text-sm text-warm/55">
             {navItems.map((item) => (
@@ -21,7 +21,7 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
+        <div className="col-span-1">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-warm/70">Resources</h3>
           <ul className="mt-4 space-y-2 text-sm text-warm/55">
             <li>Hardware Specs</li>
@@ -29,7 +29,7 @@ export function SiteFooter() {
             <li>CCS2 Compliance</li>
           </ul>
         </div>
-        <div>
+        <div className="col-span-2 md:col-span-1">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-warm/70">Contact</h3>
           <ul className="mt-4 space-y-3 text-sm text-warm/55">
             <li>

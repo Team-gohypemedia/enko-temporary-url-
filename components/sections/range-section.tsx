@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { rangeCards } from '@/lib/site-data';
 
 const bgImages = [
@@ -23,6 +23,8 @@ const ACTIVE_IMG_CLASSES = [
 export function RangeSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [hoveredPanelIndex, setHoveredPanelIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -30,12 +32,29 @@ export function RangeSection() {
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   const handleClose = (e: React.MouseEvent) => {
     e.stopPropagation();
     setActiveIndex(null);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent, index: number) => {
+    if (isMobile || activeIndex !== null) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+    setHoveredPanelIndex(index);
+  };
+
+  const handlePanelMouseLeave = () => {
+    if (isMobile) return;
+    setHoveredPanelIndex(null);
   };
 
   return (
@@ -45,17 +64,15 @@ export function RangeSection() {
     >
       <div className="container-shell">
         {/* Title/Header to introduce the interactive view */}
-        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between text-left">
-          <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-charge mb-2">
-              [ INTERACTIVE FOOTPRINT ANALYSIS ]
-            </p>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-warm leading-tight">
-              SYSTEMS SELECTOR
-            </h2>
-          </div>
-          <p className="mt-3 md:mt-0 text-sm text-warm/60 max-w-sm">
-            Click on any charging node to inspect its internal layout, core architecture, and full technical specifications.
+        <div className="mb-12 flex flex-col items-center text-center justify-center">
+          <p className="text-[10px] font-black tracking-[0.2em] text-charge mb-2">
+            [ INTERACTIVE SYSTEMS EXPLORER ]
+          </p>
+          <h2 className="text-3xl md:text-5xl font-black uppercase text-warm leading-tight mb-3">
+            SYSTEMS SELECTOR
+          </h2>
+          <p className="text-sm text-warm/60 max-w-xl mx-auto">
+            Click on any charging node to inspect its power outputs, key features, and full technical specifications.
           </p>
         </div>
 
@@ -84,6 +101,8 @@ export function RangeSection() {
               <div
                 key={card.name}
                 onClick={() => setActiveIndex(i)}
+                onMouseMove={(e) => handleMouseMove(e, i)}
+                onMouseLeave={handlePanelMouseLeave}
                 className="relative flex w-full h-auto lg:h-full overflow-hidden cursor-pointer transition-all duration-800 ease-[cubic-bezier(0.25,1,0.3,1)] will-change-[flex] border-b lg:border-b-0 lg:border-r border-warm/10 last:border-b-0 lg:last:border-r-0"
                 style={{
                   flex: isActive
@@ -91,6 +110,7 @@ export function RangeSection() {
                     : isAnyActive
                     ? '1 0 0%'
                     : '4 0 0%',
+                  cursor: (hoveredPanelIndex === i && activeIndex === null) ? 'none' : 'pointer',
                 }}
               >
                 {/* Background Image */}
@@ -121,11 +141,12 @@ export function RangeSection() {
 
                 {/* DEFAULT CLOSED STATE */}
                 <div
-                  className="absolute inset-0 z-20 flex flex-col justify-between py-5 px-4 lg:p-8 items-center text-center transition-all duration-700 ease-[cubic-bezier(0.25,1,0.3,1)]"
+                  className="absolute inset-0 z-20 flex flex-col justify-between py-5 px-4 lg:p-8 items-center text-center transition-all duration-500 ease-out"
                   style={{
                     opacity: isAnyActive ? 0 : 1,
                     transform: isAnyActive ? 'translateY(-20px)' : 'translateY(0)',
                     pointerEvents: isAnyActive ? 'none' : 'auto',
+                    transitionDelay: isAnyActive ? '0ms' : '200ms',
                   }}
                 >
                   <div>
@@ -138,7 +159,9 @@ export function RangeSection() {
                   </div>
 
                   {/* Fully visible charger image in default preview state */}
-                  <div className="my-auto flex items-end justify-center h-[100px] lg:h-[290px] w-full relative pb-4">
+                  <div
+                    className="my-auto flex items-end justify-center h-[100px] lg:h-[290px] w-full relative pb-4"
+                  >
                     <img
                       src={card.image}
                       alt={card.name}
@@ -160,10 +183,11 @@ export function RangeSection() {
 
                 {/* COLLAPSED VIEW (when another panel is expanded) */}
                 <div
-                  className="absolute inset-0 z-20 flex flex-row lg:flex-col items-center justify-between px-6 py-4 lg:py-12 pointer-events-none transition-all duration-500"
+                  className="absolute inset-0 z-20 flex flex-row lg:flex-col items-center justify-between px-6 py-4 lg:py-12 pointer-events-none transition-all duration-500 ease-out"
                   style={{
                     opacity: (isAnyActive && !isActive) ? 1 : 0,
                     transform: (isAnyActive && !isActive) ? 'translateY(0)' : 'translateY(20px)',
+                    transitionDelay: (isAnyActive && !isActive) ? '150ms' : '0ms',
                   }}
                 >
                   <div className="flex items-center gap-4 lg:flex-col">
@@ -196,11 +220,12 @@ export function RangeSection() {
 
                 {/* EXPANDED VIEW */}
                 <div
-                  className="relative z-20 w-full h-full flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.25,1,0.3,1)]"
+                  className="relative z-20 w-full h-full flex items-center justify-center transition-all duration-400 ease-[cubic-bezier(0.25,1,0.3,1)]"
                   style={{
                     opacity: isActive ? 1 : 0,
                     transform: isActive ? 'scale(1)' : 'scale(0.97)',
                     pointerEvents: isActive ? 'auto' : 'none',
+                    transitionDelay: isActive ? '150ms' : '0ms',
                   }}
                 >
                   {/* Close button inside the active panel */}
@@ -224,10 +249,11 @@ export function RangeSection() {
                     
                     {/* Left Column: Specs Branding / Copy */}
                     <div
-                      className="lg:col-span-3 flex flex-col justify-center space-y-4 text-left transition-all duration-700 delay-100"
+                      className="lg:col-span-3 flex flex-col justify-center space-y-4 text-left transition-all duration-400 ease-out"
                       style={{
                         transform: isActive ? 'translateX(0)' : 'translateX(-30px)',
                         opacity: isActive ? 1 : 0,
+                        transitionDelay: isActive ? '250ms' : '0ms',
                       }}
                     >
                       <div>
@@ -259,10 +285,11 @@ export function RangeSection() {
 
                     {/* Center Column: Fully Viewable Large Product Image */}
                     <div
-                      className="lg:col-span-6 flex flex-col items-center justify-center relative min-h-[260px] lg:min-h-[420px] transition-all duration-700 delay-200"
+                      className="lg:col-span-6 flex flex-col items-center justify-center relative min-h-[260px] lg:min-h-[420px] transition-all duration-400 ease-out"
                       style={{
                         transform: isActive ? 'translateY(0)' : 'translateY(25px)',
                         opacity: isActive ? 1 : 0,
+                        transitionDelay: isActive ? '300ms' : '0ms',
                       }}
                     >
                       {/* Extremely crisp, large, and fully viewable charger image */}
@@ -279,10 +306,11 @@ export function RangeSection() {
 
                     {/* Right Column: Complete Technical Specifications */}
                     <div
-                      className="lg:col-span-3 flex flex-col justify-center space-y-4 text-left transition-all duration-700 delay-100"
+                      className="lg:col-span-3 flex flex-col justify-center space-y-4 text-left transition-all duration-400 ease-out"
                       style={{
                         transform: isActive ? 'translateX(0)' : 'translateX(30px)',
                         opacity: isActive ? 1 : 0,
+                        transitionDelay: isActive ? '250ms' : '0ms',
                       }}
                     >
                       <div className="border-l border-charge/40 pl-3 py-0.5">
@@ -307,6 +335,21 @@ export function RangeSection() {
 
                   </div>
                 </div>
+
+                {/* Custom hover cursor badge */}
+                {hoveredPanelIndex === i && activeIndex === null && (
+                  <div
+                    className="pointer-events-none absolute z-50 px-5 py-2.5 bg-charge text-forge font-mono font-black uppercase text-[10px] tracking-[0.2em] whitespace-nowrap shadow-lg shadow-charge/20"
+                    style={{
+                      left: `${mousePos.x}px`,
+                      top: `${mousePos.y}px`,
+                      transform: 'translate(-50%, -50%)',
+                      clipPath: 'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
+                    }}
+                  >
+                    OPEN
+                  </div>
+                )}
 
               </div>
             );

@@ -19,20 +19,22 @@ export function FaqSection() {
   ];
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center bg-steel py-16 border-b border-warm/10 lg:min-h-[100dvh] lg:py-24">
+    <section className="bg-steel pt-16 pb-8 lg:pt-24 lg:pb-12 border-b border-warm/10">
       <div className="container-shell">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start mb-12 lg:mb-10">
 
           {/* Left Column: Header */}
-          <div className="lg:col-span-4 flex flex-col space-y-6 lg:sticky lg:top-32">
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:sticky lg:top-32">
             <Reveal>
-              <h2 className="text-4xl md:text-5xl lg:text-[56px] font-black text-warm leading-[1.05] tracking-tight mb-5">
-                <br />Frequently Asked Questions
-              </h2>
-              <p className="text-base lg:text-lg text-warm/70 leading-relaxed max-w-sm pr-4">
-                WE HOPE YOU FIND WHAT YOU ARE LOOKING FOR. EXPLORE FAQ'S.
-              </p>
+              <div className="flex flex-col items-center lg:items-start w-full">
+                <h2 className="text-4xl md:text-5xl lg:text-[56px] font-black text-warm leading-[1.05] tracking-tight mb-5">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-base lg:text-lg text-warm/70 leading-relaxed max-w-sm pr-0 lg:pr-4">
+                  WE HOPE YOU FIND WHAT YOU ARE LOOKING FOR. EXPLORE FAQ'S.
+                </p>
+              </div>
             </Reveal>
           </div>
 
@@ -82,17 +84,17 @@ export function FaqSection() {
 
         {/* Stats Row */}
         <Reveal delay={0.2}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-warm/10">
+          <div className="grid grid-cols-4 gap-3 sm:gap-4 md:gap-6 pt-8 border-t border-warm/10">
             {stats.map((stat, idx) => (
-              <div key={idx} className="flex items-center space-x-4">
-                <div className="w-8 h-8 flex-shrink-0 text-charge">
+              <div key={idx} className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-2 md:gap-4">
+                <div className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0 text-charge">
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d={stat.icon} />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xl font-black text-warm">{stat.value}</p>
-                  <p className="text-[10px] font-bold uppercase text-warm/60">{stat.label}</p>
+                  <p className="text-sm sm:text-base md:text-xl font-black text-warm leading-tight">{stat.value}</p>
+                  <p className="text-[9px] sm:text-[9px] md:text-[10px] font-bold uppercase text-warm/60 mt-1 leading-tight">{stat.label}</p>
                 </div>
               </div>
             ))}
