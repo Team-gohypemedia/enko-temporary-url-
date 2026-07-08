@@ -15,9 +15,9 @@ const PREVIEW_IMG_CLASSES = [
 ];
 
 const ACTIVE_IMG_CLASSES = [
-  'max-h-[220px] lg:max-h-[420px] scale-[1.2] origin-center',  // Flow AC (AC Charger) - Large scale
-  'max-h-[220px] lg:max-h-[460px] scale-[1.1] origin-center',  // Storm DC (Fast DC Cabinet) - Large scale
-  'max-h-[220px] lg:max-h-[480px] scale-[1.1] origin-center',  // Blaze Ultra (Heavy DC Dispenser) - Large scale
+  'max-h-[300px] lg:max-h-[650px] scale-[1.8] lg:scale-[2.6] origin-center',  // Flow AC (AC Charger) - Zoomed more
+  'max-h-[300px] lg:max-h-[650px] scale-[1.5] lg:scale-[2.0] origin-center',  // Storm DC (Fast DC Cabinet) - Zoomed more
+  'max-h-[300px] lg:max-h-[650px] scale-[1.5] lg:scale-[2.0] origin-center',  // Blaze Ultra (Heavy DC Dispenser) - Zoomed more
 ];
 
 export function RangeSection() {
@@ -61,7 +61,7 @@ export function RangeSection() {
 
         {/* Bounded Interactive Slider Container */}
         <div
-          className="relative w-full overflow-hidden border border-warm/10 rounded-2xl bg-steel/20 flex flex-col lg:flex-row h-[780px] lg:h-[550px]"
+          className="relative w-full overflow-hidden border border-warm/10 rounded-2xl bg-steel/20 flex flex-col lg:flex-row h-[940px] lg:h-[550px]"
         >
           {/* Ambient background glow inside the slider box */}
           <div
@@ -121,7 +121,7 @@ export function RangeSection() {
 
                 {/* DEFAULT CLOSED STATE */}
                 <div
-                  className="absolute inset-0 z-20 flex flex-col justify-between p-5 lg:p-8 items-center text-center transition-all duration-700 ease-[cubic-bezier(0.25,1,0.3,1)]"
+                  className="absolute inset-0 z-20 flex flex-col justify-between py-5 px-4 lg:p-8 items-center text-center transition-all duration-700 ease-[cubic-bezier(0.25,1,0.3,1)]"
                   style={{
                     opacity: isAnyActive ? 0 : 1,
                     transform: isAnyActive ? 'translateY(-20px)' : 'translateY(0)',
@@ -138,7 +138,7 @@ export function RangeSection() {
                   </div>
 
                   {/* Fully visible charger image in default preview state */}
-                  <div className="my-auto flex items-end justify-center h-[120px] lg:h-[290px] w-full relative pb-4">
+                  <div className="my-auto flex items-end justify-center h-[100px] lg:h-[290px] w-full relative pb-4">
                     <img
                       src={card.image}
                       alt={card.name}
@@ -147,7 +147,7 @@ export function RangeSection() {
                   </div>
 
                   <div className="w-full">
-                    <p className="text-[11px] text-warm/65 max-w-[240px] mx-auto mb-4 leading-relaxed line-clamp-2">
+                    <p className="text-[11px] text-warm/65 max-w-[240px] mx-auto mb-3 lg:mb-4 leading-relaxed line-clamp-2">
                       {card.copy}
                     </p>
                     <button
