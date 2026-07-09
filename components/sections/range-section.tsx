@@ -127,14 +127,14 @@ export function RangeSection() {
                   }}
                 >
                   <div>
-                    <h3 className="text-2xl lg:text-3xl font-black uppercase text-warm tracking-tight">
+                    <h3 className="text-sm lg:text-3xl font-black uppercase text-warm tracking-tight leading-tight">
                       {card.name}
                     </h3>
                   </div>
 
                   {/* Fully visible charger image in default preview state */}
                   <div
-                    className="w-full h-[160px] lg:h-[290px] relative overflow-hidden border-y border-warm/10 my-4 flex items-center justify-center"
+                    className="w-full h-[120px] lg:h-[290px] relative overflow-hidden border-y border-warm/10 my-2 lg:my-4 flex items-center justify-center"
                   >
                     <img
                       src={card.image}
@@ -144,7 +144,7 @@ export function RangeSection() {
                   </div>
 
                   <div className="w-full">
-                    <p className="text-sm text-warm/80 max-w-[240px] mx-auto mb-3 lg:mb-4 leading-relaxed line-clamp-2">
+                    <p className="text-[10px] lg:text-sm text-warm/80 max-w-[240px] mx-auto mb-2 lg:mb-4 leading-relaxed line-clamp-2">
                       {card.copy}
                     </p>
                     <button

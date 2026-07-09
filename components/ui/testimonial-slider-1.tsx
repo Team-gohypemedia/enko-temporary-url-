@@ -104,7 +104,7 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
       <div className="grid min-h-full grid-cols-1 gap-8 lg:grid-cols-12">
         <div className="order-2 flex flex-col lg:flex-row lg:justify-start lg:gap-6 lg:order-1 lg:col-span-2 lg:pt-4">
           {/* Left: Vertical text title on desktop */}
-          <div className="hidden lg:flex lg:flex-col lg:justify-start lg:items-center lg:shrink-0 lg:pt-0">
+          <div className="hidden lg:flex lg:flex-col lg:justify-start lg:items-start lg:shrink-0 lg:pt-0 lg:pl-6">
             <h3 className="text-xs font-black uppercase tracking-[0.28em] text-charge [writing-mode:vertical-rl] lg:rotate-180">
               Product Range
             </h3>
@@ -121,7 +121,7 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
               </h3>
             </div>
 
-            <div className="flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:flex-nowrap lg:gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:overflow-y-auto lg:max-h-[440px] lg:gap-2 px-1 py-1 no-scrollbar lg:pr-2">
               {thumbnailReviews.map((review) => {
                 const originalIndex = reviews.findIndex((item) => item.id === review.id);
                 const isActive = originalIndex === currentIndex;
@@ -167,21 +167,21 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
             />
           </AnimatePresence>
 
-          {/* Mobile-only: arrows overlaid on left/right edges of image */}
-          <div className="lg:hidden">
+          {/* Arrows overlaid on left/right edges of image */}
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 flex justify-between px-2 lg:px-4 pointer-events-none">
             <button
               onClick={handlePrev}
               aria-label="Previous product"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-forge/80 border border-warm/20 flex items-center justify-center hover:border-charge/50 transition-colors"
+              className="pointer-events-auto w-9 h-9 lg:w-11 lg:h-11 rounded-full bg-forge/80 border border-warm/20 flex items-center justify-center hover:border-charge transition-colors"
             >
-              <ArrowLeft className="h-4 w-4 text-warm" />
+              <ArrowLeft className="h-4 w-4 lg:h-5 lg:w-5 text-warm" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next product"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-charge flex items-center justify-center hover:bg-charge/80 transition-colors"
+              className="pointer-events-auto w-9 h-9 lg:w-11 lg:h-11 rounded-full bg-charge flex items-center justify-center hover:bg-charge/80 transition-colors"
             >
-              <ArrowRight className="h-4 w-4 text-forge" />
+              <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5 text-forge" />
             </button>
           </div>
         </div>
@@ -229,21 +229,18 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
                 )}
 
                 {activeReview.features && activeReview.features.length > 0 && (
-                  <div className="mt-6 flex flex-wrap sm:flex-nowrap items-center gap-4 xl:gap-6 border-t border-warm/10 pt-6 w-full">
+                  <div className="mt-6 flex flex-nowrap items-center gap-x-3.5 border-t border-warm/10 pt-6 w-full overflow-visible">
                     {activeReview.features.map((feature, idx) => (
                       <React.Fragment key={idx}>
-                        <div className="flex items-center gap-3">
-                          <div className="text-warm/80">
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          <div className="text-warm/80 [&_svg]:w-[16px] [&_svg]:h-[16px] flex-shrink-0">
                             {feature.icon}
                           </div>
                           <div>
-                            <div className="text-sm font-black uppercase text-charge leading-none">{feature.title}</div>
-                            <div className="text-xs font-medium uppercase text-warm/70 mt-1 leading-none">{feature.subtitle}</div>
+                            <div className="text-[11px] font-black uppercase text-charge leading-none">{feature.title}</div>
+                            <div className="text-[9px] font-medium uppercase text-warm/70 mt-0.5 leading-none">{feature.subtitle}</div>
                           </div>
                         </div>
-                        {idx < activeReview.features!.length - 1 && (
-                          <div className="hidden sm:block h-8 w-px bg-warm/10 flex-shrink-0"></div>
-                        )}
                       </React.Fragment>
                     ))}
                   </div>
@@ -252,25 +249,6 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 hidden lg:flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-              onClick={handlePrev}
-              aria-label="Previous product"
-            >
-              <ArrowLeft className="h-5 w-5" />
-            </Button>
-            <Button
-              size="icon"
-              className="rounded-full"
-              onClick={handleNext}
-              aria-label="Next product"
-            >
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-          </div>
         </div>
       </div>
     </div>
