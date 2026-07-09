@@ -25,7 +25,7 @@ export function OemSection() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-charge drop-shadow-md">
               Partner portal access
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-black uppercase leading-[1.05] text-warm tracking-tight drop-shadow-xl">
+            <h2 className="text-3xl md:text-5xl lg:text-[60px] font-black uppercase leading-[1.05] text-warm tracking-tight drop-shadow-xl">
               OEM READY. ELECTRIFYING TO DRIVE
             </h2>
             <div className="flex flex-col space-y-4 max-w-2xl mt-4">
@@ -36,8 +36,8 @@ export function OemSection() {
                 Fully integrated systems that connect the charging network with back-end solutions seamlessly.
               </p>
             </div>
-            <a href="/partners" className="mt-8 inline-block bg-charge text-forge px-10 py-4 font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-warm transition-colors shadow-[0_0_40px_rgba(232,160,32,0.4)]">
-              Access Portal &rarr;
+            <a href="/partners" className="mt-8 inline-flex items-center justify-center bg-charge text-forge px-6 py-2.5 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-warm transition-colors shadow-[0_0_40px_rgba(232,160,32,0.4)] w-full sm:w-[190px]">
+              Access Portal <span className="inline-block ml-1">&rarr;</span>
             </a>
           </div>
         </Reveal>

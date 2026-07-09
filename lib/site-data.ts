@@ -40,8 +40,8 @@ export const metrics = [
 
 export const rangeCards = [
   {
-    name: 'FLOW AC',
-    tag: '[ SYSTEM_NODE_01 // AC_SERIES ]',
+    name: 'ENKO Flow',
+    tag: '[ AC_SERIES ]',
     copy: 'Reliable destination charging for commercial properties and fleet installations.',
     specs: [
       ['Output', '7.4kW, 11kW, 22kW'],
@@ -51,8 +51,8 @@ export const rangeCards = [
     image: '/products/11kw-22kw.png',
   },
   {
-    name: 'STORM DC',
-    tag: '[ SYSTEM_NODE_02 // DC_FAST_SERIES ]',
+    name: 'ENKO Storm',
+    tag: '[ DC_FAST_SERIES ]',
     copy: 'High-throughput charging for highway corridors and busy transport depots.',
     specs: [
       ['Output', '30kW, 60kW, 120kW'],
@@ -62,8 +62,8 @@ export const rangeCards = [
     image: '/products/120kw.png',
   },
   {
-    name: 'BLAZE ULTRA',
-    tag: '[ SYSTEM_NODE_03 // DC_ULTRA_SERIES ]',
+    name: 'ENKO Blaze',
+    tag: '[ DC_ULTRA_SERIES ]',
     copy: 'Ultra-fast modular charging setups for heavy commercial vehicles and large transit hubs.',
     specs: [
       ['Output', '240kW+ Extreme Throughput'],

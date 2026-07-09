@@ -150,10 +150,10 @@ export function ProcurementSection() {
 
             <div className="border-t border-warm/10 pt-4">
               <div className="flex flex-col gap-4 sm:flex-row">
-              <button disabled={isSubmitting} className="industrial-button w-full bg-warm text-forge transition-colors hover:bg-white sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2" type="submit">
+              <button disabled={isSubmitting} className="industrial-button w-full sm:w-[190px] bg-warm text-forge transition-colors hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-center" type="submit">
                 {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Submitting...</> : 'Submit Specification'}
               </button>
-                <a className="industrial-button w-full bg-charge text-forge transition-colors hover:bg-[#d89117] sm:w-auto" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <a className="industrial-button w-full sm:w-[190px] bg-charge text-forge transition-colors hover:bg-[#d89117] flex items-center justify-center text-center" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   WhatsApp ENKO
                 </a>

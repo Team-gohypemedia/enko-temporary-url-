@@ -13,7 +13,7 @@ const flowProducts = [
   {
     num: 1,
     name: 'ENKO Flow 7',
-    tag: 'SYSTEM_NODE_01 // AC_SERIES',
+    tag: 'AC_SERIES',
     image: '/products/7.4kw (2).png',
     bgImage: '/images/flow_ac_bg.png?v=3',
     powerOutput: '7.4kW AC Commercial',
@@ -22,7 +22,7 @@ const flowProducts = [
   {
     num: 2,
     name: 'ENKO Flow 11',
-    tag: 'SYSTEM_NODE_02 // AC_SERIES',
+    tag: 'AC_SERIES',
     image: '/products/7.4kw (2).png',
     bgImage: '/images/flow_ac_bg.png?v=3',
     powerOutput: '11kW AC Commercial',
@@ -31,7 +31,7 @@ const flowProducts = [
   {
     num: 3,
     name: 'ENKO Flow 22',
-    tag: 'SYSTEM_NODE_03 // AC_SERIES',
+    tag: 'AC_SERIES',
     image: '/products/11kw-22kw.png',
     bgImage: '/images/flow_ac_bg.png?v=3',
     powerOutput: '22kW AC Commercial',
@@ -43,7 +43,7 @@ const stormProducts = [
   {
     num: 4,
     name: 'ENKO Storm 30',
-    tag: 'SYSTEM_NODE_04 // DC_FAST_SERIES',
+    tag: 'DC_FAST_SERIES',
     image: '/products/30kw.png',
     bgImage: '/images/storm_dc_bg.png?v=3',
     powerOutput: '30kW DC Fast Charging',
@@ -52,7 +52,7 @@ const stormProducts = [
   {
     num: 5,
     name: 'ENKO Storm 60',
-    tag: 'SYSTEM_NODE_05 // DC_FAST_SERIES',
+    tag: 'DC_FAST_SERIES',
     image: '/products/60kw.png',
     bgImage: '/images/storm_dc_bg.png?v=3',
     powerOutput: '60kW DC Fast Charging',
@@ -62,7 +62,7 @@ const stormProducts = [
   {
     num: 6,
     name: 'ENKO Storm 120',
-    tag: 'SYSTEM_NODE_06 // DC_FAST_SERIES',
+    tag: 'DC_FAST_SERIES',
     image: '/products/120kw.png',
     bgImage: '/images/storm_dc_bg.png?v=3',
     powerOutput: '120kW DC Fast Charging',
@@ -75,7 +75,7 @@ const blazeProducts = [
   {
     num: 7,
     name: 'ENKO Blaze 240',
-    tag: 'SYSTEM_NODE_07 // DC_ULTRA_SERIES',
+    tag: 'DC_ULTRA_SERIES',
     image: '/products/240kw.png',
     bgImage: '/images/blaze_ultra_bg.png?v=3',
     powerOutput: '240kW+ DC Ultra Charging',
@@ -216,9 +216,6 @@ function ProductSlider({ products, accentColor = '#E8A020' }: { products: any[],
               }}
             >
               <div>
-                <span className="text-[9px] font-black tracking-[0.2em] text-charge uppercase font-mono block mb-2">
-                  NODE 0{i + 1}
-                </span>
                 <h3 className="text-2xl lg:text-3xl font-black uppercase text-warm tracking-tight">
                   {card.name}
                 </h3>
@@ -239,13 +236,13 @@ function ProductSlider({ products, accentColor = '#E8A020' }: { products: any[],
               </div>
 
               <div className="w-full">
-                <p className="text-[11px] text-warm/65 max-w-[240px] mx-auto mb-4 leading-relaxed line-clamp-2">
+                <p className="text-sm text-warm/80 max-w-[240px] mx-auto mb-4 leading-relaxed line-clamp-2">
                   {card.primaryApplication}
                 </p>
                 <button
                   className="py-2.5 px-5 bg-forge/60 border border-warm/15 text-[9px] font-black tracking-[0.18em] text-warm uppercase transition-all duration-300 hover:bg-charge hover:text-forge hover:border-charge"
                 >
-                  [ OPEN NODE ]
+                  [ VIEW SPECS ]
                 </button>
               </div>
             </div>
@@ -257,10 +254,6 @@ function ProductSlider({ products, accentColor = '#E8A020' }: { products: any[],
                 transform: (isAnyActive && !isActive) ? 'translateY(0)' : 'translateY(20px)',
               }}
             >
-              <span className="text-[9px] font-black tracking-[0.2em] text-charge uppercase font-mono">
-                0{i + 1}
-              </span>
-
               <div className="flex flex-col items-center gap-4 my-auto">
                 <span
                   className="font-black uppercase tracking-[0.25em] text-warm/60 text-[10px] whitespace-nowrap"
@@ -381,7 +374,7 @@ function ProductSlider({ products, accentColor = '#E8A020' }: { products: any[],
                       <span className="w-1.5 h-1.5 rounded-full bg-charge" />
                       PRIMARY APPLICATION
                     </h4>
-                    <p className="text-[13px] leading-relaxed text-warm/90 max-w-sm">
+                    <p className="text-sm leading-relaxed text-warm/90 max-w-sm">
                       {card.primaryApplication}
                     </p>
                   </div>
@@ -716,7 +709,7 @@ export default function ProductsPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-charge mb-3">
                 {/* [ HARDWARE SYSTEMS COMPONENT ARCHITECTURE ] */}
               </p>
-              <h2 className="text-3xl lg:text-5xl font-black uppercase text-warm mb-4 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-warm mb-4 leading-tight">
                 Full-Spectrum CCS2<br />Charging Assets.
               </h2>
               <p className="text-warm/55 text-sm max-w-xl">
@@ -793,7 +786,7 @@ export default function ProductsPage() {
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-4">
                 SEAMLESS INTEGRATION
               </p>
-              <h2 className="text-3xl lg:text-5xl font-black uppercase mb-4 text-warm">B2B Deployment Flow</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-4 text-warm">B2B Deployment Flow</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 xl:gap-8 relative">
@@ -852,7 +845,7 @@ export default function ProductsPage() {
         <div className="container-shell max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center mb-8 xl:mb-10">
-              <h2 className="text-2xl lg:text-4xl font-black uppercase mb-2 text-warm">Connector Compatibility</h2>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase mb-2 text-warm">Connector Compatibility</h2>
               <p className="text-warm/60 text-sm">Universal standard charging for every major EV fleet.</p>
             </div>
             <div className="overflow-x-auto rounded-2xl border border-warm/10 bg-forge">

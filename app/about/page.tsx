@@ -110,7 +110,7 @@ export default function AboutPage() {
         <div className="px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center space-y-6 w-full max-w-4xl mx-auto relative z-10">
           <Reveal>
             <div className="flex flex-col items-center text-center w-full space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-warm leading-[0.9]">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-warm leading-[0.9]">
                 Powering the <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-charge to-charge/60">Transition</span>
               </h1>
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full bg-charge/10 flex items-center justify-center text-charge">
                   <Target className="w-6 h-6" />
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-warm">Our Mission</h2>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-warm">Our Mission</h2>
               </div>
               <p className="text-warm/60 text-lg leading-relaxed mb-10">
                 To provide exceptional infrastructure services that exceed client expectations through innovation, quality craftsmanship, and a commitment to sustainability. We aim to build lasting relationships and create spaces that enhance communities. Through precision, expertise, and a customer-centric approach, we strive to exceed expectations in every project.
@@ -193,7 +193,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full bg-charge/10 flex items-center justify-center text-charge">
                   <Eye className="w-6 h-6" />
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-warm">Our Vision</h2>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-warm">Our Vision</h2>
               </div>
               <p className="text-warm/60 text-lg leading-relaxed mb-10">
                 At ENKO, our vision is to lead the infrastructure industry through innovation, sustainability, and excellence. We aim to set the benchmark for infrastructure standards globally, paving the way for a more sustainable and resilient future. By combining cutting-edge technology with eco-friendly practices, we strive to redefine the way infrastructure systems are built.
@@ -227,7 +227,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full bg-charge/10 flex items-center justify-center text-charge">
                   <History className="w-6 h-6" />
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-warm">Our Commitment</h2>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-warm">Our Commitment</h2>
               </div>
               <p className="text-warm/60 text-lg leading-relaxed mb-10">
                 At ENKO we are committed to revolutionizing the EV infrastructure industry. With a proven track record of delivering exceptional charging hubs, we combine state-of-the-art technology and skilled expertise to bring visions to life.
@@ -258,7 +258,7 @@ export default function AboutPage() {
         {/* Top Heading */}
         <div className="text-center mb-20 relative z-10">
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-4">ENGINEERED FOR EXCELLENCE</p>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-warm uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-warm uppercase tracking-tight">
             Discover <span className="text-transparent bg-clip-text bg-gradient-to-r from-charge to-charge/60">Our Chargers</span>
           </h2>
         </div>
@@ -321,7 +321,7 @@ export default function AboutPage() {
       <section className="container-shell py-20 border-b border-warm/10">
         <div className="text-center mb-16">
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-4">WHO WE ARE</p>
-          <h2 className="text-4xl lg:text-5xl font-black uppercase text-warm">Our Core Identity</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-warm">Our Core Identity</h2>
         </div>
 
         {(() => {
@@ -388,7 +388,7 @@ export default function AboutPage() {
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-4">
             INDUSTRY STANDARDS
           </p>
-          <h2 className="text-4xl lg:text-5xl font-black uppercase mb-4 text-warm">Certifications & Compliance</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase mb-4 text-warm">Certifications & Compliance</h2>
           <p className="text-warm/60 max-w-2xl mx-auto text-sm">
             Our hardware is built to the highest safety and performance standards. Every ENKO charging unit undergoes rigorous testing to guarantee reliability across demanding commercial environments.
           </p>
@@ -427,7 +427,7 @@ export default function AboutPage() {
       <section className="bg-steel text-warm py-16 border-t border-warm/10">
         <div className="container-shell grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border-b border-warm/10 pb-16 mb-16">
           <div>
-            <h2 className="text-3xl lg:text-4xl font-black uppercase mb-4">Let's Create Your Ideal Space</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase mb-4">Let's Create Your Ideal Space</h2>
             <p className="text-warm/60 text-sm max-w-md">
               Ready to start your project with ENKO? Get in touch with us to discuss your ideas, ask questions. From concepts, completion, let's explore quality and make it a reality.
             </p>

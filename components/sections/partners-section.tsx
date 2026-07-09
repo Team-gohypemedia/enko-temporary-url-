@@ -28,7 +28,7 @@ export function PartnersSection() {
               </p>
               <a
                 href="/contact"
-                className="industrial-button mt-8 w-full border-charge bg-charge text-forge hover:bg-warm hover:text-forge sm:w-auto"
+                className="industrial-button mt-8 w-full sm:w-[190px] border-charge bg-charge text-forge hover:bg-warm hover:text-forge flex items-center justify-center text-center"
               >
                 {segment.cta}
               </a>
@@ -46,7 +46,7 @@ export function PartnersSection() {
             </div>
             <a
               href="/contact"
-              className="industrial-button border-warm bg-warm text-forge hover:bg-charge hover:text-forge"
+              className="industrial-button w-full sm:w-[190px] border-warm bg-warm text-forge hover:bg-charge hover:text-forge flex items-center justify-center text-center"
             >
               Share Your Deployment Specs
             </a>

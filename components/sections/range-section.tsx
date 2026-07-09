@@ -2,22 +2,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { rangeCards } from '@/lib/site-data';
 
-const bgImages = [
-  '/images/flow_ac_bg.png?v=3',
-  '/images/storm_dc_bg.png?v=3',
-  '/images/blaze_ultra_bg.png?v=3',
-];
-
 const PREVIEW_IMG_CLASSES = [
-  'max-h-[100px] lg:max-h-[300px] scale-[1.35] lg:scale-[1.45]', // Flow AC (AC Charger) - Large scale
-  'max-h-[100px] lg:max-h-[300px] scale-[1.2] lg:scale-[1.25]',  // Storm DC (Fast DC Cabinet) - Large scale
-  'max-h-[100px] lg:max-h-[300px] scale-[1.2] lg:scale-[1.25]',  // Blaze Ultra (Heavy DC Dispenser) - Large scale
+  'w-full h-full object-contain',
+  'w-full h-full object-contain',
+  'w-full h-full object-contain',
 ];
 
 const ACTIVE_IMG_CLASSES = [
-  'max-h-[300px] lg:max-h-[650px] scale-[1.8] lg:scale-[2.6] origin-center',  // Flow AC (AC Charger) - Zoomed more
-  'max-h-[300px] lg:max-h-[650px] scale-[1.5] lg:scale-[2.0] origin-center',  // Storm DC (Fast DC Cabinet) - Zoomed more
-  'max-h-[300px] lg:max-h-[650px] scale-[1.5] lg:scale-[2.0] origin-center',  // Blaze Ultra (Heavy DC Dispenser) - Zoomed more
+  'w-full max-h-[300px] lg:max-h-[420px] object-contain',
+  'w-full max-h-[300px] lg:max-h-[420px] object-contain',
+  'w-full max-h-[300px] lg:max-h-[420px] object-contain',
 ];
 
 export function RangeSection() {
@@ -113,22 +107,8 @@ export function RangeSection() {
                   cursor: (hoveredPanelIndex === i && activeIndex === null) ? 'none' : 'pointer',
                 }}
               >
-                {/* Background Image */}
+                {/* Top amber accent line */}
                 <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                  <img
-                    src={bgImages[i]}
-                    alt=""
-                    className="w-full h-full object-cover transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.3,1)]"
-                    style={{
-                      filter: isActive
-                        ? 'brightness(0.22) saturate(0.5) blur(1px)'
-                        : isAnyActive
-                        ? 'brightness(0.08) saturate(0.1) blur(2px)'
-                        : 'brightness(0.65) saturate(0.85) contrast(1.05)',
-                      transform: isActive ? 'scale(1.08)' : 'scale(1)',
-                    }}
-                  />
-                  {/* Top amber accent line */}
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px] transition-all duration-500 origin-left"
                     style={{
@@ -150,9 +130,6 @@ export function RangeSection() {
                   }}
                 >
                   <div>
-                    <span className="text-[9px] font-black tracking-[0.2em] text-charge uppercase font-mono block mb-2">
-                      NODE 0{i + 1}
-                    </span>
                     <h3 className="text-2xl lg:text-3xl font-black uppercase text-warm tracking-tight">
                       {card.name}
                     </h3>
@@ -160,23 +137,23 @@ export function RangeSection() {
 
                   {/* Fully visible charger image in default preview state */}
                   <div
-                    className="my-auto flex items-end justify-center h-[100px] lg:h-[290px] w-full relative pb-4"
+                    className="w-full h-[160px] lg:h-[290px] relative overflow-hidden border-y border-warm/10 my-4 flex items-center justify-center"
                   >
                     <img
                       src={card.image}
                       alt={card.name}
-                      className={`w-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)] transition-transform duration-500 hover:scale-105 z-10 ${PREVIEW_IMG_CLASSES[i]}`}
+                      className={`transition-transform duration-500 hover:scale-105 z-10 ${PREVIEW_IMG_CLASSES[i]}`}
                     />
                   </div>
 
                   <div className="w-full">
-                    <p className="text-[11px] text-warm/65 max-w-[240px] mx-auto mb-3 lg:mb-4 leading-relaxed line-clamp-2">
+                    <p className="text-sm text-warm/80 max-w-[240px] mx-auto mb-3 lg:mb-4 leading-relaxed line-clamp-2">
                       {card.copy}
                     </p>
                     <button
                       className="py-2.5 px-5 bg-forge/60 border border-warm/15 text-[9px] font-black tracking-[0.18em] text-warm uppercase transition-all duration-300 hover:bg-charge hover:text-forge hover:border-charge"
                     >
-                      [ OPEN NODE ]
+                      [ VIEW SPECS ]
                     </button>
                   </div>
                 </div>
@@ -191,9 +168,6 @@ export function RangeSection() {
                   }}
                 >
                   <div className="flex items-center gap-4 lg:flex-col">
-                    <span className="text-[9px] font-black tracking-[0.2em] text-charge uppercase font-mono">
-                      0{i + 1}
-                    </span>
                     <span
                       className="font-black uppercase tracking-[0.25em] text-warm/60 text-[10px] whitespace-nowrap lg:hidden"
                     >
@@ -265,7 +239,7 @@ export function RangeSection() {
                         </h3>
                       </div>
                       
-                      <p className="text-xs leading-relaxed text-warm/75 max-w-sm">
+                      <p className="text-sm leading-relaxed text-warm/80 max-w-sm">
                         {card.copy}
                       </p>
 
@@ -347,7 +321,7 @@ export function RangeSection() {
                       clipPath: 'polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)',
                     }}
                   >
-                    OPEN
+                    VIEW
                   </div>
                 )}
 

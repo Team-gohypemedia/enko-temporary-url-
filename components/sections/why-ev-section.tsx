@@ -85,7 +85,7 @@ export function WhyEvSection() {
                       </div>
                       <div className="pt-2">
                         <h3 className="text-lg font-black uppercase text-forge tracking-wide mb-3 leading-snug">{adv.title}</h3>
-                        <p className="text-forge/80 text-sm leading-relaxed">{adv.desc}</p>
+                        <p className="text-forge font-semibold text-sm leading-relaxed">{adv.desc}</p>
                       </div>
                     </div>
                   </Reveal>
@@ -98,7 +98,7 @@ export function WhyEvSection() {
                   </div>
                   <div className="pt-2">
                     <h3 className="text-lg font-black uppercase text-forge tracking-wide mb-3 leading-snug">{adv.title}</h3>
-                    <p className="text-forge/80 text-sm leading-relaxed">{adv.desc}</p>
+                    <p className="text-forge font-semibold text-sm leading-relaxed">{adv.desc}</p>
                   </div>
                 </div>
               </div>

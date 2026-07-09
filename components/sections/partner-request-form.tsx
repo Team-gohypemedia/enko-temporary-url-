@@ -7,7 +7,7 @@ export function PartnerRequestForm() {
         
         {/* Left Side: Title */}
         <div className="flex-1">
-          <h2 className="text-4xl md:text-5xl font-black text-warm mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-warm mb-6 leading-tight">
             Request Form
           </h2>
           <p className="text-warm/60 mb-10 max-w-md">
@@ -63,7 +63,7 @@ export function PartnerRequestForm() {
               <textarea rows={4} className="w-full bg-steel/50 border border-warm/20 rounded px-4 py-3 text-warm focus:outline-none focus:border-charge transition-colors resize-none" placeholder="Tell us about your requirements..." required></textarea>
             </div>
 
-            <button type="submit" className="industrial-button w-full border-charge bg-charge text-forge hover:bg-warm hover:text-forge hover:border-warm">
+            <button type="submit" className="industrial-button w-full sm:w-[190px] border-charge bg-charge text-forge hover:bg-warm hover:text-forge hover:border-warm flex items-center justify-center text-center">
               Request a Callback
             </button>
           </form>

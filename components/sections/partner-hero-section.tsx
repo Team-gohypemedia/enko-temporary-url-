@@ -32,17 +32,17 @@ export function PartnerHeroSection() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col gap-4 sm:flex-row items-center justify-center">
+        <div className="flex flex-col gap-4 sm:flex-row items-center justify-center w-full">
           <a
             href="#procurement"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-charge bg-charge px-10 py-4 text-[11px] font-black uppercase tracking-widest text-forge transition-colors hover:bg-warm hover:text-forge"
+            className="inline-flex items-center justify-center gap-2 border border-charge bg-charge px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-forge transition-colors hover:bg-warm hover:text-forge w-full sm:w-[190px]"
           >
             <FileText className="h-4 w-4" />
             Request Quote
           </a>
           <a
             href="/products"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-warm/20 bg-steel/50 backdrop-blur-md px-10 py-4 text-[11px] font-black uppercase tracking-widest text-warm transition-colors hover:border-charge hover:text-charge"
+            className="inline-flex items-center justify-center gap-2 border border-warm/20 bg-steel/50 backdrop-blur-md px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-warm transition-colors hover:border-charge hover:text-charge w-full sm:w-[190px]"
           >
             View Products
             <ArrowRight className="h-4 w-4" />

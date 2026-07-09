@@ -2,11 +2,11 @@ import { aboutData } from '@/lib/site-data';
 
 export function AboutSection() {
   return (
-    <section id="about" className="border-b border-forge/10 bg-warm">
+    <section id="about" className="border-b border-forge/10 bg-warm text-forge">
       <div className="container-shell py-16 lg:py-24">
         <div className="mb-12">
           <p className="label-kicker text-charge">The infrastructure layer</p>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-black uppercase leading-[1.05] md:text-6xl md:leading-[0.95]">
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black uppercase leading-[1.05] lg:leading-[0.95] text-forge">
             The backbone behind the network.
           </h2>
         </div>
@@ -14,20 +14,20 @@ export function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="grid gap-8">
             <div className="border-l-4 border-charge pl-6">
-              <h3 className="text-xl font-black uppercase">Company Story</h3>
+              <h3 className="text-xl font-black uppercase text-forge">Company Story</h3>
               <p className="mt-3 text-sm leading-7 text-forge/68">
                 {aboutData.companyStoryShort}
               </p>
             </div>
             <div className="border-l-4 border-forge pl-6">
-              <h3 className="text-xl font-black uppercase">Vision & Mission</h3>
+              <h3 className="text-xl font-black uppercase text-forge">Vision & Mission</h3>
               <p className="mt-3 text-sm leading-7 text-forge/68">
                 {aboutData.visionShort}
               </p>
             </div>
             <div className="border border-forge/15 p-5 bg-forge/5">
               <p className="label-kicker text-forge/42">Directors</p>
-              <h4 className="mt-2 text-lg font-black uppercase">{aboutData.directors.names}</h4>
+              <h4 className="mt-2 text-lg font-black uppercase text-forge">{aboutData.directors.names}</h4>
               <p className="mt-3 text-sm leading-7 text-forge/68">
                 {aboutData.directors.experienceShort}
               </p>

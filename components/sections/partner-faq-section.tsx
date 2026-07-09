@@ -16,8 +16,8 @@ export function PartnerFaqSection() {
         
         {/* Left Side: Text and CTA */}
         <div className="flex-1">
-          <p className="text-charge font-bold uppercase tracking-widest text-lg mb-4">FAQs</p>
-          <h2 className="text-4xl md:text-5xl font-black text-warm mb-6 leading-tight">
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-charge mb-4">FAQs</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-warm mb-6 leading-tight">
             Got questions about EVs?
           </h2>
           <p className="text-warm/60 mb-10 max-w-md">
@@ -25,7 +25,7 @@ export function PartnerFaqSection() {
           </p>
           <a
             href="#procurement"
-            className="industrial-button border-charge bg-charge text-forge hover:bg-warm hover:text-forge hover:border-warm"
+            className="industrial-button w-full sm:w-[190px] border-charge bg-charge text-forge hover:bg-warm hover:text-forge hover:border-warm flex items-center justify-center text-center"
           >
             Contact Support
           </a>

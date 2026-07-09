@@ -78,7 +78,7 @@ export function PartnerFeaturesSection() {
 
                 <a
                   href="#procurement"
-                  className="industrial-button mt-auto border-charge bg-charge text-forge hover:bg-warm hover:text-forge"
+                  className="industrial-button mt-auto w-full border-charge bg-charge text-forge hover:bg-warm hover:text-forge flex items-center justify-center text-center"
                 >
                   {feature.cta}
                 </a>
