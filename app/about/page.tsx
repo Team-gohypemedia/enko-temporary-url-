@@ -294,15 +294,17 @@ export default function AboutPage() {
           {/* AC Card */}
           <Link href="/products#ac-chargers" className="group relative bg-steel border border-warm/10 rounded-3xl p-10 lg:p-14 overflow-hidden flex flex-col h-full hover:border-charge/40 transition-all duration-500 hover:shadow-2xl hover:shadow-charge/5">
             {/* Massive Background Icon */}
-            <div className="absolute -bottom-10 -right-10 text-warm/5 group-hover:text-charge/5 transition-colors duration-500 transform group-hover:scale-110 group-hover:-rotate-12">
-              <Zap className="w-64 h-64" strokeWidth={1} />
+            <div className="absolute -bottom-4 -right-4 text-warm/5 group-hover:text-charge/5 transition-colors duration-500 transform group-hover:scale-110 group-hover:-rotate-12">
+              <Zap className="w-40 h-40" strokeWidth={1} />
             </div>
 
             <div className="relative z-10 flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-charge/20 to-transparent flex items-center justify-center mb-8 border border-charge/20 group-hover:border-charge/40 transition-colors">
-                <Zap className="w-8 h-8 text-charge" />
+              <div className="flex flex-row items-center gap-4 mb-6">
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-charge/20 to-transparent flex items-center justify-center border border-charge/20 group-hover:border-charge/40 transition-colors">
+                  <Zap className="w-7 h-7 text-charge" />
+                </div>
+                <h4 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-warm">AC Chargers</h4>
               </div>
-              <h4 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-warm mb-4">AC Chargers</h4>
               <p className="text-warm/60 text-base leading-relaxed mb-10 max-w-sm mx-auto lg:mx-0">
                 Built for everyday charging — at homes, workplaces, apartments, and shared spaces. Compact in design, easy to install, and dependable in performance, seamlessly fitting into daily life.
               </p>
@@ -318,15 +320,17 @@ export default function AboutPage() {
           {/* DC Card */}
           <Link href="/products#dc-chargers" className="group relative bg-steel border border-warm/10 rounded-3xl p-10 lg:p-14 overflow-hidden flex flex-col h-full hover:border-charge/40 transition-all duration-500 hover:shadow-2xl hover:shadow-charge/5">
             {/* Massive Background Icon */}
-            <div className="absolute -bottom-10 -right-10 text-warm/5 group-hover:text-charge/5 transition-colors duration-500 transform group-hover:scale-110 group-hover:rotate-12">
-              <BatteryCharging className="w-64 h-64" strokeWidth={1} />
+            <div className="absolute bottom-0 right-0 text-warm/5 group-hover:text-charge/5 transition-colors duration-500 transform group-hover:scale-110 group-hover:rotate-12">
+              <BatteryCharging className="w-24 h-24" strokeWidth={1} />
             </div>
 
             <div className="relative z-10 flex-1 flex flex-col items-center lg:items-start text-center lg:text-left">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-charge/20 to-transparent flex items-center justify-center mb-8 border border-charge/20 group-hover:border-charge/40 transition-colors">
-                <BatteryCharging className="w-8 h-8 text-charge" />
+              <div className="flex flex-row items-center gap-4 mb-6">
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-to-br from-charge/20 to-transparent flex items-center justify-center border border-charge/20 group-hover:border-charge/40 transition-colors">
+                  <BatteryCharging className="w-7 h-7 text-charge" />
+                </div>
+                <h4 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-warm">DC Chargers</h4>
               </div>
-              <h4 className="text-2xl lg:text-3xl font-black uppercase tracking-tight text-warm mb-4">DC Chargers</h4>
               <p className="text-warm/60 text-base leading-relaxed mb-10 max-w-sm mx-auto lg:mx-0">
                 Fast, powerful, and ready for scale. Built for highways, high-footfall locations, fleets, and commercial hubs — delivering quick turnaround and reliable performance where speed truly matters.
               </p>
