@@ -112,11 +112,11 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
 
           {/* Right: Pagination index on top, thumbnails below */}
           <div className="flex flex-col gap-3 flex-grow">
-            <div className="flex items-center justify-between lg:justify-start">
-              <span className="font-mono text-sm font-bold text-warm/45">
+            <div className="flex items-center gap-3 lg:justify-start">
+              <span className="font-mono text-[10px] font-bold text-warm/45 whitespace-nowrap">
                 {String(currentIndex + 1).padStart(2, "0")} / {String(reviews.length).padStart(2, "0")}
               </span>
-              <h3 className="lg:hidden text-xs font-black uppercase tracking-[0.28em] text-charge">
+              <h3 className="lg:hidden text-[9px] font-black uppercase tracking-[0.22em] text-charge whitespace-nowrap">
                 Product Range
               </h3>
             </div>
@@ -142,7 +142,7 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
                     <img
                       src={review.thumbnailSrc}
                       alt={review.name}
-                      className="h-full w-full object-contain px-2 pb-4 pt-2"
+                      className="h-full w-full object-cover"
                     />
                   </button>
                 );
@@ -166,6 +166,24 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
               className="absolute inset-0 w-full h-full object-contain p-0 drop-shadow-[0_0_36px_rgba(232,160,32,0.18)]"
             />
           </AnimatePresence>
+
+          {/* Mobile-only: arrows overlaid on left/right edges of image */}
+          <div className="lg:hidden">
+            <button
+              onClick={handlePrev}
+              aria-label="Previous product"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-forge/80 border border-warm/20 flex items-center justify-center hover:border-charge/50 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4 text-warm" />
+            </button>
+            <button
+              onClick={handleNext}
+              aria-label="Next product"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-charge flex items-center justify-center hover:bg-charge/80 transition-colors"
+            >
+              <ArrowRight className="h-4 w-4 text-forge" />
+            </button>
+          </div>
         </div>
 
         <div className="order-3 flex flex-col justify-start lg:col-span-5 lg:pl-4 xl:pl-8">
@@ -234,7 +252,7 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 flex items-center gap-2">
+          <div className="mt-8 hidden lg:flex items-center gap-2">
             <Button
               variant="outline"
               size="icon"
