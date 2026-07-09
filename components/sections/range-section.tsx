@@ -331,7 +331,7 @@ export function RangeSection() {
         <div className="mt-6 flex justify-center">
           <a
             href="/products"
-            className="inline-flex items-center gap-1 border border-charge bg-charge text-forge text-[10px] font-black tracking-[0.12em] uppercase px-3 py-1.5 hover:bg-charge/90 transition-colors whitespace-nowrap"
+            className="inline-flex items-center justify-center gap-2 border border-warm/40 bg-transparent text-warm text-[11px] font-black tracking-[0.2em] uppercase px-8 py-3 hover:border-charge hover:bg-charge hover:text-forge transition-colors whitespace-nowrap"
           >
             SHOW ALL PRODUCTS →
           </a>
