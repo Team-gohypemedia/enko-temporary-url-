@@ -10,6 +10,19 @@
   --steel: #3a3a36;
 }
 
+/* Global font size overrides to ensure 18px body and small text */
+.text-xs,
+.text-sm,
+.text-base {
+  font-size: 18px !important;
+}
+
+/* Ensure select dropdown options match the dark form theme */
+select option {
+  background-color: #111111 !important;
+  color: #eeebe4 !important;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
@@ -55,7 +68,7 @@ body {
 
 
 .label-kicker {
-  font-size: 0.7rem;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -84,7 +97,7 @@ body {
   gap: 1rem;
   border-top: 1px solid rgba(238, 235, 228, 0.14);
   padding-block: 0.72rem;
-  font-size: 0.74rem;
+  font-size: 18px;
   line-height: 1.35;
 }
 
@@ -188,5 +201,15 @@ body {
   filter: blur(32px);
   opacity: 0.3;
   background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 

@@ -15,8 +15,9 @@ const config: Config = {
         steel: '#1A1A1A',
       },
       fontSize: {
-        xs: '14px',
-        sm: '16px',
+        xs: '18px',
+        sm: '18px',
+        base: '18px',
       },
       boxShadow: {
         soft: '0 18px 60px rgba(0, 0, 0, 0.12)',

@@ -55,7 +55,7 @@ export function WhyEvSection() {
 
         <Reveal>
           <div className="mb-4 md:mb-12 flex flex-col items-center text-center justify-center">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-forge/70 mb-2">
+            <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-forge/70 mb-2">
               BUILDING A GREENER TOMORROW
             </p>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-forge leading-tight max-w-3xl mx-auto">

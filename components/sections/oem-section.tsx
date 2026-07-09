@@ -36,7 +36,7 @@ export function OemSection() {
                 Fully integrated systems that connect the charging network with back-end solutions seamlessly.
               </p>
             </div>
-            <a href="/partners" className="mt-8 inline-flex items-center justify-center bg-charge text-forge px-6 py-2.5 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-warm transition-colors shadow-[0_0_40px_rgba(232,160,32,0.4)] w-full sm:w-[190px]">
+            <a href="/partners" className="mt-8 inline-flex items-center justify-center bg-charge text-forge px-6 py-3 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-warm transition-colors shadow-[0_0_40px_rgba(232,160,32,0.4)] w-[160px] sm:w-[190px] border border-transparent whitespace-nowrap">
               Access Portal <span className="inline-block ml-1">&rarr;</span>
             </a>
           </div>

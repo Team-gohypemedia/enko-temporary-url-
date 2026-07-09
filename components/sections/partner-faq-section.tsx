@@ -16,7 +16,7 @@ export function PartnerFaqSection() {
         
         {/* Left Side: Text and CTA */}
         <div className="flex-1">
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-charge mb-4">FAQs</p>
+          <p className="text-[14px] font-black uppercase tracking-[0.2em] text-charge mb-4">FAQs</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-warm mb-6 leading-tight">
             Got questions about EVs?
           </h2>

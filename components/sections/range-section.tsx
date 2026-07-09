@@ -57,17 +57,14 @@ export function RangeSection() {
       className="bg-forge py-16 border-b border-warm/10 relative overflow-hidden select-none"
     >
       <div className="container-shell">
-        {/* Title/Header to introduce the interactive view */}
-        <div className="mb-12 flex flex-col items-center text-center justify-center">
-          <p className="text-[10px] font-black tracking-[0.2em] text-charge mb-2">
-            [ INTERACTIVE SYSTEMS EXPLORER ]
+        {/* Title/Header — centered */}
+        <div className="mb-10 flex flex-col items-center text-center border-b border-warm/10 pb-6">
+          <p className="text-[12px] font-black tracking-[0.2em] text-charge mb-2 uppercase">
+            [ ARCHITECTURE OVERVIEW ]
           </p>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-warm leading-tight mb-3">
-            SYSTEMS SELECTOR
+          <h2 className="text-3xl md:text-5xl font-black uppercase text-warm leading-tight">
+            THE ENKO RANGE
           </h2>
-          <p className="text-sm text-warm/60 max-w-xl mx-auto">
-            Click on any charging node to inspect its power outputs, key features, and full technical specifications.
-          </p>
         </div>
 
         {/* Bounded Interactive Slider Container */}
@@ -328,6 +325,16 @@ export function RangeSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Bottom-center CTA */}
+        <div className="mt-6 flex justify-center">
+          <a
+            href="/products"
+            className="inline-flex items-center gap-1 border border-charge bg-charge text-forge text-[10px] font-black tracking-[0.12em] uppercase px-3 py-1.5 hover:bg-charge/90 transition-colors whitespace-nowrap"
+          >
+            SHOW ALL PRODUCTS →
+          </a>
         </div>
       </div>
 

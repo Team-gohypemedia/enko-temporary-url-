@@ -63,7 +63,7 @@ export function ServiceSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
           <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 z-10">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70 mb-2">SMART SOLUTIONS</p>
+            <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-white/70 mb-2">SMART SOLUTIONS</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white leading-tight">BENEFITS OF EV</h2>
           </div>
         </Reveal>
@@ -97,7 +97,7 @@ export function ServiceSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
           <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 z-10">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#E8A020] mb-2">CHARGING INFRASTRUCTURE</p>
+            <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-[#E8A020] mb-2">CHARGING INFRASTRUCTURE</p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white leading-tight">PUBLIC SERVICE</h2>
           </div>
         </Reveal>

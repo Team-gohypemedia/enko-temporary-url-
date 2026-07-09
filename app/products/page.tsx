@@ -435,11 +435,11 @@ export default function ProductsPage() {
         <div className="px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center space-y-6 w-full max-w-4xl mx-auto relative z-10">
           <Reveal>
             <div className="flex flex-col items-center text-center w-full space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-warm leading-[0.9]">
+              <h1 className="text-5xl md:text-6xl lg:text-[72px] font-black uppercase tracking-tight text-warm leading-[1.05] drop-shadow-sm">
                 Hardware for <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-charge to-charge/60">The Future</span>
               </h1>
-              <p className="text-warm/60 text-lg md:text-xl max-w-2xl leading-relaxed">
+              <p className="text-white text-base max-w-2xl leading-relaxed drop-shadow-md">
                 Full-spectrum CCS2 charging assets. From entry-level commercial AC plug-ins to high-power highway DC ultra-chargers.
               </p>
             </div>
@@ -452,9 +452,9 @@ export default function ProductsPage() {
 
 
       {/* Product Showcase Section */}
-      <section className="h-[100dvh] flex flex-col relative bg-[#0a0a0a] overflow-hidden border-b border-warm/10 pt-20 pb-3 lg:pt-24 lg:pb-5">
+      <section className="relative bg-[#0a0a0a] border-b border-warm/10 pt-10 pb-6 lg:pt-12 lg:pb-12">
 
-        <div className="container-shell h-full relative z-10 flex flex-col">
+        <div className="container-shell relative z-10">
           <TestimonialSlider
             reviews={[
               {
@@ -694,25 +694,25 @@ export default function ProductsPage() {
                 ]
               },
             ]}
-            className="h-full flex-1"
+            className="flex-1 flex flex-col"
           />
         </div>
       </section>
 
       {/* Product Catalog Section */}
-      <section id="ac-chargers" className="min-h-[100dvh] scroll-mt-24 bg-steel border-b border-warm/10 py-16 lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden lg:py-10">
+      <section id="ac-chargers" className="scroll-mt-24 bg-steel border-b border-warm/10 py-16 lg:py-20">
         <div className="container-shell">
           <Reveal>
 
             {/* Header */}
-            <div className="mb-10 xl:mb-12">
+            <div className="mb-10 xl:mb-12 text-center flex flex-col items-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-charge mb-3">
                 {/* [ HARDWARE SYSTEMS COMPONENT ARCHITECTURE ] */}
               </p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase text-warm mb-4 leading-tight">
                 Full-Spectrum CCS2<br />Charging Assets.
               </h2>
-              <p className="text-warm/55 text-sm max-w-xl">
+              <p className="text-warm/55 text-sm max-w-xl mx-auto">
                 From entry-level commercial AC plug-ins to high-power highway DC ultra-chargers, select the exact hardware footprint your network requires.
               </p>
             </div>
@@ -735,7 +735,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="min-h-[100dvh] bg-forge border-b border-warm/10 py-16 lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden lg:py-10">
+      <section className="bg-forge border-b border-warm/10 py-16 lg:py-20">
         <div className="container-shell">
           <Reveal>
             {/* ── Series 2: STORM DC ── */}
@@ -756,7 +756,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <section className="min-h-[100dvh] bg-steel border-b border-warm/10 py-16 lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden lg:py-10">
+      <section className="bg-steel border-b border-warm/10 py-16 lg:py-20">
         <div className="container-shell">
           <Reveal>
             {/* ── Series 3: BLAZE ULTRA ── */}
@@ -779,7 +779,7 @@ export default function ProductsPage() {
 
 
       {/* B2B Deployment Flow Section */}
-      <section className="min-h-[100dvh] bg-forge relative border-b border-warm/10 py-16 lg:flex lg:h-[100dvh] lg:items-center lg:overflow-hidden lg:py-10">
+      <section className="bg-forge relative border-b border-warm/10 py-16 lg:py-20">
         <div className="container-shell">
           <Reveal>
             <div className="text-center mb-10 xl:mb-12">
@@ -841,7 +841,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Compatibility Chart Section */}
-      <section className="min-h-[50dvh] bg-steel border-b border-warm/10 py-16 lg:flex lg:h-[50dvh] lg:items-center lg:overflow-hidden lg:py-10">
+      <section className="bg-steel border-b border-warm/10 py-16 lg:py-20">
         <div className="container-shell max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
           <Reveal>
             <div className="text-center mb-8 xl:mb-10">

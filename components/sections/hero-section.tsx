@@ -45,7 +45,7 @@ export function HeroSection() {
           {/* Center: Text */}
           <div className="flex flex-col items-center text-center w-full">
             <Reveal direction="right" delay={0.0}>
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-charge mb-4">India Built EV Infrastructure</p>
+              <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-charge mb-4">India Built EV Infrastructure</p>
             </Reveal>
             <Reveal direction="right" delay={0.2}>
               <h1 className="text-5xl md:text-6xl lg:text-[72px] font-black uppercase text-warm leading-[1.05] tracking-tight drop-shadow-sm flex flex-col items-center">
@@ -66,10 +66,18 @@ export function HeroSection() {
 
           <Reveal direction="right" delay={0.6}>
             <div className="flex flex-row justify-center gap-4 w-full max-w-sm sm:max-w-none mx-auto">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:w-[190px] text-center bg-[#E8A020] text-forge px-6 py-2.5 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-[#c98a1a] transition-colors shadow-lg shadow-[#E8A020]/30 group whitespace-nowrap">
-                Whatsapp Us <span className="inline-block ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[160px] sm:w-[190px] inline-flex items-center justify-center bg-[#E8A020] text-forge border border-[#E8A020] px-6 py-2.5 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-[#c98a1a] hover:border-[#c98a1a] transition-colors shadow-lg shadow-[#E8A020]/30 group whitespace-nowrap"
+              >
+                Whatsapp Us <span className="inline-block ml-1.5 group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
-              <a href="/contact" className="flex-1 sm:w-[190px] text-center bg-steel text-warm border border-warm/20 px-6 py-2.5 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-warm hover:text-forge transition-colors shadow-lg group whitespace-nowrap">
+              <a
+                href="/contact"
+                className="w-[160px] sm:w-[190px] inline-flex items-center justify-center bg-steel text-warm border border-warm/20 px-6 py-2.5 font-black uppercase tracking-[0.2em] text-[10px] hover:bg-warm hover:text-forge transition-colors shadow-lg whitespace-nowrap"
+              >
                 Request a Quote
               </a>
             </div>

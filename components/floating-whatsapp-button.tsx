@@ -1,7 +1,17 @@
+"use client";
+
+import { usePathname } from 'next/navigation';
 import { FaWhatsapp } from 'react-icons/fa';
 import { whatsappUrl } from '@/lib/site-data';
 
 export function FloatingWhatsappButton() {
+  const pathname = usePathname();
+
+  // Hide on homepage
+  if (pathname === '/') {
+    return null;
+  }
+
   return (
     <a
       href={whatsappUrl}

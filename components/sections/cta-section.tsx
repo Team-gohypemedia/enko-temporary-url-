@@ -19,7 +19,7 @@ export function CtaSection() {
           <div className="flex flex-col gap-3 w-full sm:w-auto min-w-[280px] items-center">
             <a
               href="/contact#procurement"
-              className="w-full sm:w-[190px] px-6 py-2.5 bg-[#111] text-center text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#111] transition-colors border border-[#111]"
+              className="w-[220px] inline-flex items-center justify-center whitespace-nowrap px-6 py-3 bg-[#111] text-center text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#111] transition-colors border border-[#111]"
             >
               REQUEST PRICING SPEC
             </a>

@@ -16,13 +16,13 @@ export function PartnersPageHero() {
 
       <div className="px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center space-y-6 w-full max-w-4xl mx-auto relative z-10">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.24em] text-charge">
+          <p className="text-[14px] font-black uppercase tracking-[0.24em] text-charge">
             Partner Network
           </p>
-          <h1 className="mt-5 text-4xl font-black uppercase leading-[0.98] text-warm sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 text-5xl md:text-6xl lg:text-[72px] font-black uppercase leading-[1.05] tracking-tight text-warm drop-shadow-sm">
             Partner with ENKO
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-warm/75 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white drop-shadow-md">
             Build, operate, and scale commercial EV charging networks with hardware, field support, and deployment programs designed for Indian infrastructure.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row w-full">

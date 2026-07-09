@@ -68,7 +68,7 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
     };
   }, [isPaused, handleNext]);
 
-  const thumbnailReviews = reviews.filter((_, index) => index !== currentIndex).slice(0, 4);
+  const thumbnailReviews = reviews;
 
   const imageVariants = {
     enter: (slideDirection: "left" | "right") => ({
@@ -97,45 +97,61 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
   return (
     <div
       className={cn(
-        "relative w-full h-full overflow-hidden bg-transparent text-warm p-5 sm:p-8 lg:px-12 lg:py-8",
+        "relative w-full min-h-full bg-transparent text-warm p-5 sm:p-8 lg:px-12 lg:py-8",
         className
       )}
     >
-      <div className="grid h-full grid-cols-1 gap-8 lg:grid-cols-12">
-        <div className="order-2 flex flex-col justify-between lg:order-1 lg:col-span-2">
-          <div className="flex items-start justify-between gap-4 lg:block lg:space-y-8">
-            <span className="font-mono text-sm font-bold text-warm/45">
-              {String(currentIndex + 1).padStart(2, "0")} / {String(reviews.length).padStart(2, "0")}
-            </span>
-            <h3 className="hidden text-xs font-black uppercase tracking-[0.28em] text-charge [writing-mode:vertical-rl] lg:block lg:rotate-180">
+      <div className="grid min-h-full grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className="order-2 flex flex-col lg:flex-row lg:justify-start lg:gap-6 lg:order-1 lg:col-span-2 lg:pt-4">
+          {/* Left: Vertical text title on desktop */}
+          <div className="hidden lg:flex lg:flex-col lg:justify-start lg:items-center lg:shrink-0 lg:pt-0">
+            <h3 className="text-xs font-black uppercase tracking-[0.28em] text-charge [writing-mode:vertical-rl] lg:rotate-180">
               Product Range
             </h3>
           </div>
 
-          <div className="mt-8 flex gap-2 overflow-x-auto pb-1 lg:mt-0 lg:flex-wrap">
-            {thumbnailReviews.map((review) => {
-              const originalIndex = reviews.findIndex((item) => item.id === review.id);
+          {/* Right: Pagination index on top, thumbnails below */}
+          <div className="flex flex-col gap-3 flex-grow">
+            <div className="flex items-center justify-between lg:justify-start">
+              <span className="font-mono text-sm font-bold text-warm/45">
+                {String(currentIndex + 1).padStart(2, "0")} / {String(reviews.length).padStart(2, "0")}
+              </span>
+              <h3 className="lg:hidden text-xs font-black uppercase tracking-[0.28em] text-charge">
+                Product Range
+              </h3>
+            </div>
 
-              return (
-                <button
-                  key={review.id}
-                  type="button"
-                  onClick={() => handleThumbnailClick(originalIndex)}
-                  className="relative h-20 w-16 flex-shrink-0 overflow-hidden border border-warm/10 bg-steel/60 opacity-60 transition hover:border-charge hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-charge lg:h-24 lg:w-20"
-                  aria-label={`View ${review.name}`}
-                >
-                  <img
-                    src={review.thumbnailSrc}
-                    alt={review.name}
-                    className="h-full w-full object-contain px-2 pb-4 pt-2"
-                  />
-                </button>
-              );
-            })}
+            <div className="flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:flex-nowrap lg:gap-2">
+              {thumbnailReviews.map((review) => {
+                const originalIndex = reviews.findIndex((item) => item.id === review.id);
+                const isActive = originalIndex === currentIndex;
+
+                return (
+                  <button
+                    key={review.id}
+                    type="button"
+                    onClick={() => handleThumbnailClick(originalIndex)}
+                    className={`relative h-20 w-16 flex-shrink-0 overflow-hidden border bg-steel/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-charge lg:h-24 lg:w-20
+                      ${isActive
+                        ? 'border-charge opacity-100 shadow-md shadow-charge/10 bg-forge'
+                        : 'border-warm/10 opacity-50 hover:border-charge/50 hover:opacity-85'
+                      }
+                    `}
+                    aria-label={`View ${review.name}`}
+                  >
+                    <img
+                      src={review.thumbnailSrc}
+                      alt={review.name}
+                      className="h-full w-full object-contain px-2 pb-4 pt-2"
+                    />
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        <div className="relative order-1 min-h-[320px] overflow-hidden lg:order-2 lg:col-span-4 lg:min-h-[500px] flex items-center justify-center">
+        <div className="relative order-1 min-h-[320px] overflow-hidden lg:order-2 lg:col-span-5 lg:min-h-[500px] lg:pt-4">
           <AnimatePresence initial={false} custom={direction}>
             <motion.img
               key={currentIndex}
@@ -147,13 +163,13 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
               animate="center"
               exit="exit"
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              className="absolute inset-0 h-full w-full object-contain p-2 pb-8 drop-shadow-[0_0_36px_rgba(232,160,32,0.18)] lg:p-4"
+              className="absolute inset-0 w-full h-full object-contain p-0 drop-shadow-[0_0_36px_rgba(232,160,32,0.18)]"
             />
           </AnimatePresence>
         </div>
 
-        <div className="order-3 flex flex-col justify-between lg:col-span-6 lg:pl-4 xl:pl-8">
-          <div className="relative min-h-[240px] overflow-hidden pt-2 lg:pt-14">
+        <div className="order-3 flex flex-col justify-start lg:col-span-5 lg:pl-4 xl:pl-8">
+          <div className="relative min-h-[240px] overflow-hidden pt-2 lg:pt-4">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -218,7 +234,7 @@ export function TestimonialSlider({ reviews, className }: TestimonialSliderProps
             </AnimatePresence>
           </div>
 
-          <div className="mt-8 flex items-center gap-2 lg:mt-0">
+          <div className="mt-8 flex items-center gap-2">
             <Button
               variant="outline"
               size="icon"

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { faqs, publicStats } from '@/lib/site-data';
 import { Reveal } from '@/components/reveal';
+import { Counter } from '@/components/counter';
 
 export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -93,7 +94,9 @@ export function FaqSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm sm:text-base md:text-xl font-black text-warm leading-tight">{stat.value}</p>
+                  <p className="text-[14px] sm:text-base md:text-xl font-black text-warm leading-tight">
+                    <Counter value={stat.value} />
+                  </p>
                   <p className="text-[9px] sm:text-[9px] md:text-[10px] font-bold uppercase text-warm/60 mt-1 leading-tight">{stat.label}</p>
                 </div>
               </div>

@@ -23,10 +23,10 @@ export function PageHero({ title, description, kicker }: PageHeroProps) {
         <Reveal>
           <div className="flex flex-col items-center text-center w-full space-y-4">
             {kicker && <p className="label-kicker text-charge">{kicker}</p>}
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black uppercase leading-[0.95]">
+            <h1 className="text-5xl md:text-6xl lg:text-[72px] font-black uppercase leading-[1.05] tracking-tight text-warm drop-shadow-sm">
               {title}
             </h1>
-            <p className="text-base md:text-lg leading-7 text-warm/70 max-w-xl mx-auto">
+            <p className="text-base leading-7 text-white max-w-xl mx-auto drop-shadow-md">
               {description}
             </p>
           </div>

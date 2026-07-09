@@ -61,7 +61,7 @@ export function ProcurementSection() {
             </div>
 
             <div className="border border-warm/10 bg-forge p-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.16em] text-warm/45">Operational regions</p>
+              <p className="label-kicker text-charge">Operational regions</p>
               <p className="mt-3 text-sm leading-5 text-warm/70">
                 Kerala and Andhra Pradesh are active service regions. Telangana and other states are handled as expansion enquiries.
               </p>

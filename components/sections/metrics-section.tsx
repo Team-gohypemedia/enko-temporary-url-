@@ -73,7 +73,7 @@ export function MetricsSection() {
             className="absolute inset-0 w-full h-full object-cover opacity-80"
           />
           <div className="relative z-10">
-            <p className="text-[10px] text-warm/70 uppercase tracking-widest font-bold mb-2">Smart Solutions</p>
+            <p className="text-[14px] text-warm/70 uppercase tracking-widest font-bold mb-2">Smart Solutions</p>
             <h2 className="text-4xl lg:text-5xl font-black text-warm uppercase tracking-tight">BENEFITS OF EV</h2>
           </div>
         </div>
@@ -113,7 +113,7 @@ export function MetricsSection() {
             className="absolute inset-0 w-full h-full object-cover filter contrast-[1.1] opacity-50 mix-blend-screen"
           />
           <div className="relative z-10">
-            <p className="text-[10px] text-charge uppercase tracking-widest font-bold mb-2">Charging Infrastructure</p>
+            <p className="text-[14px] text-charge uppercase tracking-widest font-bold mb-2">Charging Infrastructure</p>
             <h2 className="text-4xl lg:text-5xl font-black text-warm uppercase tracking-tight">PUBLIC SERVICE</h2>
           </div>
         </div>

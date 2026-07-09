@@ -17,15 +17,15 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show bg after scrolling past the hero (100vh)
-      setScrolled(window.scrollY > window.innerHeight * 0.8);
+      // Show bg after scrolling 50px
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // run on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const hasBg = !isHomePage || scrolled;
+  const hasBg = !isHomePage || scrolled || isOpen;
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ${hasBg ? 'bg-forge border-warm/10' : 'bg-transparent border-transparent'}`}>
@@ -44,7 +44,7 @@ export function SiteHeader() {
               <a
                 key={item.label}
                 href={item.href}
-                className={`transition-colors duration-500 ${pathname === item.href ? 'text-charge' : 'text-white hover:text-white/80'}`}
+                className={`text-[14px] transition-colors duration-500 ${pathname === item.href ? 'text-charge' : 'text-white hover:text-white/80'}`}
               >
                 {item.label}
               </a>
@@ -85,7 +85,7 @@ export function SiteHeader() {
 
         {/* Mobile Drawer Menu */}
         <div className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden border-b border-warm/10 bg-steel ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <nav className="flex flex-col gap-4 p-6 text-[11px] font-semibold uppercase tracking-[0.18em]">
+          <nav className="flex flex-col items-center text-center gap-4 p-6 text-[14px] font-semibold uppercase tracking-[0.18em]">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -99,7 +99,7 @@ export function SiteHeader() {
             <a
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className={`mt-4 sm:hidden flex items-center justify-center text-center px-4 py-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border ${
+              className={`mt-4 sm:hidden flex items-center justify-center text-center px-4 py-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border w-[160px] ${
                 isContactActive
                   ? (hasBg ? 'bg-charge text-forge border-charge hover:bg-charge/90' : 'bg-white text-forge border-white hover:bg-white/90')
                   : (!hasBg ? 'border-white/40 text-white hover:bg-white hover:text-forge hover:border-white' : 'border-warm/30 text-warm hover:bg-charge hover:text-forge hover:border-charge')
