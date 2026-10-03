@@ -213,3 +213,20 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
+/* AiSensy widget brand logo enhancements */
+.df-brand-img {
+  background-color: #000000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.df-brand-img img {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+}
+
