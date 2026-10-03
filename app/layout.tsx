@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { FloatingWhatsappButton } from '@/components/floating-whatsapp-button';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -21,7 +20,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <FloatingWhatsappButton />
       </body>
     </html>
   );
